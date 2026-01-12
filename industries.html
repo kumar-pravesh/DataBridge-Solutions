@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Industries We Serve | DataBridge Solutions</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#136dec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101822",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-white antialiased"
+  >
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+      <header
+        class="sticky top-0 z-50 w-full border-b border-solid border-[#f0f2f4] dark:border-gray-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md"
+      >
+        <div
+          class="max-w-[1280px] mx-auto px-4 lg:px-10 py-3 flex items-center justify-between whitespace-nowrap"
+        >
+          <div class="flex items-center gap-8">
+            <div class="flex items-center gap-3 text-primary">
+              <div class="size-8">
+                <svg
+                  fill="none"
+                  viewBox="0 0 48 48"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z"
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                  ></path>
+                  <path
+                    clip-rule="evenodd"
+                    d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z"
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                  ></path>
+                </svg>
+              </div>
+              <h2
+                class="text-[#111418] dark:text-white text-xl font-bold leading-tight tracking-tight"
+              >
+                DataBridge
+              </h2>
+            </div>
+            <nav class="hidden lg:flex items-center gap-6">
+              <a
+                class="text-[#111418] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors"
+                href="./home.html"
+                >Home</a
+              >
+              <a
+                class="text-[#111418] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors"
+                href="./services.html"
+                >Services</a
+              >
+              <a
+                class="text-primary text-sm font-semibold"
+                href="./industries.html"
+                >Industries</a
+              >
+              <a
+                class="text-[#111418] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors"
+                href="#"
+                >Case Studies</a
+              >
+              <a
+                class="text-[#111418] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors"
+                href="#"
+                >Company</a
+              >
+            </nav>
+          </div>
+          <div class="flex items-center gap-4">
+            <!-- 🌙 Dark Mode Toggle Button -->
+            <button
+              onclick="toggleDarkMode()"
+              class="h-10 w-10 flex items-center justify-center rounded-full border border-slate-300 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+              title="Toggle Dark Mode"
+            >
+              🌙
+            </button>
+            <button
+              class="hidden md:flex min-w-[120px] items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold tracking-wide transition-all hover:bg-primary/90"
+            >
+              Get a Quote
+            </button>
+            <button class="lg:hidden p-2 text-[#111418] dark:text-white">
+              <span class="material-symbols-outlined">menu</span>
+            </button>
+          </div>
+        </div>
+      </header>
+      <main class="flex-1">
+        <div class="bg-white dark:bg-background-dark py-8">
+          <div class="max-w-[1280px] mx-auto px-4 lg:px-10">
+            <div class="flex items-center gap-2 mb-8">
+              <a
+                class="text-[#617289] dark:text-gray-400 text-sm font-medium hover:text-primary"
+                href="./home.html"
+                >Home</a
+              >
+              <span
+                class="text-[#617289] dark:text-gray-400 text-sm font-medium"
+                >/</span
+              >
+              <span class="text-[#111418] dark:text-white text-sm font-medium"
+                >Industries</span
+              >
+            </div>
+            <div
+              class="relative overflow-hidden rounded-xl bg-slate-900 min-h-[350px] flex flex-col items-center justify-center p-8 text-center"
+            >
+              <div
+                class="absolute inset-0 z-0 opacity-40"
+                style="
+                  background-image: linear-gradient(to right, #136dec, #0a3d8b),
+                    url('https://lh3.googleusercontent.com/aida-public/AB6AXuBcxamSz8iYmsNUPvc8Qeghx66JMY9KpKQtsGL3pCW3LgvyD_dxLoDOLBGu4VwktGWgXPjfrSPu-JRJF-Ig2TVHA35SOAVnsmsPaBPR3mIbrtV9sfIHzo9BqqSO6wE_RV0gYUKzC36Rhwoao_EFw3HRTXldRTtsF3iApOmX0IsgxqNdwOUD3INxUeRqt9UnFs1Ciw9bLrms9YGNnOEpdI1XY43D772Y9ym8Ly-wEMnQ2DkrVG1u388bWU09W_WAwkHzg0ZLC-njiSvc');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <div class="relative z-10 max-w-3xl">
+                <h1
+                  class="text-white text-4xl md:text-5xl font-black leading-tight tracking-tight mb-4"
+                >
+                  Industries We Serve
+                </h1>
+                <p
+                  class="text-white/90 text-base md:text-lg font-normal mb-8 leading-relaxed"
+                >
+                  We deliver customized data solutions for various industries.
+                  Each solution is tailored to meet industry-specific data
+                  standards and compliance needs.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                  <button
+                    class="bg-primary text-white px-8 py-3 rounded-lg font-bold transition-all hover:scale-105"
+                  >
+                    Explore Industry Expertise
+                  </button>
+                  <button
+                    class="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-3 rounded-lg font-bold transition-all hover:bg-white/20"
+                  >
+                    Contact Strategy Team
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section class="py-16 bg-background-light dark:bg-background-dark/50">
+          <div class="max-w-[1280px] mx-auto px-4 lg:px-10">
+            <div class="mb-12">
+              <h2
+                class="text-[#111418] dark:text-white text-3xl font-bold leading-tight tracking-tight mb-3"
+              >
+                Tailored Industry Solutions
+              </h2>
+              <div class="w-20 h-1.5 bg-primary rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div
+                class="group flex flex-col gap-5 rounded-xl border border-[#dbe0e6] dark:border-gray-800 bg-white dark:bg-gray-900 p-8 transition-all hover:shadow-xl hover:-translate-y-1"
+              >
+                <div
+                  class="flex items-center justify-center w-14 h-14 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors"
+                >
+                  <span class="material-symbols-outlined !text-3xl"
+                    >account_balance</span
+                  >
+                </div>
+                <div class="flex flex-col gap-3">
+                  <h3 class="text-[#111418] dark:text-white text-xl font-bold">
+                    Banking &amp; Finance
+                  </h3>
+                  <p
+                    class="text-[#617289] dark:text-gray-400 text-sm leading-relaxed"
+                  >
+                    High-security financial data processing and regulatory
+                    compliance support for global banking operations.
+                  </p>
+                  <a
+                    class="mt-2 text-primary text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all"
+                    href="#"
+                  >
+                    Learn More
+                    <span class="material-symbols-outlined !text-sm"
+                      >arrow_forward</span
+                    >
+                  </a>
+                </div>
+              </div>
+              <div
+                class="group flex flex-col gap-5 rounded-xl border border-[#dbe0e6] dark:border-gray-800 bg-white dark:bg-gray-900 p-8 transition-all hover:shadow-xl hover:-translate-y-1"
+              >
+                <div
+                  class="flex items-center justify-center w-14 h-14 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors"
+                >
+                  <span class="material-symbols-outlined !text-3xl"
+                    >medical_services</span
+                  >
+                </div>
+                <div class="flex flex-col gap-3">
+                  <h3 class="text-[#111418] dark:text-white text-xl font-bold">
+                    Healthcare
+                  </h3>
+                  <p
+                    class="text-[#617289] dark:text-gray-400 text-sm leading-relaxed"
+                  >
+                    HIPAA-compliant data management and medical records
+                    processing for clinics and research institutions.
+                  </p>
+                  <a
+                    class="mt-2 text-primary text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all"
+                    href="#"
+                  >
+                    Learn More
+                    <span class="material-symbols-outlined !text-sm"
+                      >arrow_forward</span
+                    >
+                  </a>
+                </div>
+              </div>
+              <div
+                class="group flex flex-col gap-5 rounded-xl border border-[#dbe0e6] dark:border-gray-800 bg-white dark:bg-gray-900 p-8 transition-all hover:shadow-xl hover:-translate-y-1"
+              >
+                <div
+                  class="flex items-center justify-center w-14 h-14 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors"
+                >
+                  <span class="material-symbols-outlined !text-3xl"
+                    >menu_book</span
+                  >
+                </div>
+                <div class="flex flex-col gap-3">
+                  <h3 class="text-[#111418] dark:text-white text-xl font-bold">
+                    Publishing
+                  </h3>
+                  <p
+                    class="text-[#617289] dark:text-gray-400 text-sm leading-relaxed"
+                  >
+                    End-to-end digital content transformation and archival data
+                    services for academic and commercial publishers.
+                  </p>
+                  <a
+                    class="mt-2 text-primary text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all"
+                    href="#"
+                  >
+                    Learn More
+                    <span class="material-symbols-outlined !text-sm"
+                      >arrow_forward</span
+                    >
+                  </a>
+                </div>
+              </div>
+              <div
+                class="group flex flex-col gap-5 rounded-xl border border-[#dbe0e6] dark:border-gray-800 bg-white dark:bg-gray-900 p-8 transition-all hover:shadow-xl hover:-translate-y-1"
+              >
+                <div
+                  class="flex items-center justify-center w-14 h-14 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors"
+                >
+                  <span class="material-symbols-outlined !text-3xl"
+                    >shopping_bag</span
+                  >
+                </div>
+                <div class="flex flex-col gap-3">
+                  <h3 class="text-[#111418] dark:text-white text-xl font-bold">
+                    E-commerce
+                  </h3>
+                  <p
+                    class="text-[#617289] dark:text-gray-400 text-sm leading-relaxed"
+                  >
+                    Efficient inventory management and product data enrichment
+                    to drive retail scalability and sales performance.
+                  </p>
+                  <a
+                    class="mt-2 text-primary text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all"
+                    href="#"
+                  >
+                    Learn More
+                    <span class="material-symbols-outlined !text-sm"
+                      >arrow_forward</span
+                    >
+                  </a>
+                </div>
+              </div>
+              <div
+                class="group flex flex-col gap-5 rounded-xl border border-[#dbe0e6] dark:border-gray-800 bg-white dark:bg-gray-900 p-8 transition-all hover:shadow-xl hover:-translate-y-1"
+              >
+                <div
+                  class="flex items-center justify-center w-14 h-14 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors"
+                >
+                  <span class="material-symbols-outlined !text-3xl"
+                    >school</span
+                  >
+                </div>
+                <div class="flex flex-col gap-3">
+                  <h3 class="text-[#111418] dark:text-white text-xl font-bold">
+                    Education
+                  </h3>
+                  <p
+                    class="text-[#617289] dark:text-gray-400 text-sm leading-relaxed"
+                  >
+                    Streamlined academic data processing and e-learning support
+                    services for modern educational institutions.
+                  </p>
+                  <a
+                    class="mt-2 text-primary text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all"
+                    href="#"
+                  >
+                    Learn More
+                    <span class="material-symbols-outlined !text-sm"
+                      >arrow_forward</span
+                    >
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="bg-primary py-16">
+          <div
+            class="max-w-[1280px] mx-auto px-4 lg:px-10 text-center text-white"
+          >
+            <h2 class="text-3xl font-extrabold mb-4">
+              Ready to optimize your industry data?
+            </h2>
+            <p class="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
+              Partner with DataBridge Solutions for specialized BPO and data
+              services tailored to your unique requirements.
+            </p>
+            <button
+              class="bg-white text-primary px-10 py-4 rounded-lg font-bold text-lg transition-transform hover:scale-105"
+            >
+              Schedule a Consultation
+            </button>
+          </div>
+        </section>
+      </main>
+      <footer
+        class="bg-white dark:bg-background-dark border-t border-[#f0f2f4] dark:border-gray-800 py-12"
+      >
+        <div class="max-w-[1280px] mx-auto px-4 lg:px-10">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <div class="flex flex-col gap-4">
+              <div class="flex items-center gap-2 text-primary">
+                <div class="size-6">
+                  <svg
+                    fill="currentColor"
+                    viewBox="0 0 48 48"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z"
+                    ></path>
+                    <path
+                      d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819Z"
+                    ></path>
+                  </svg>
+                </div>
+                <h2 class="text-[#111418] dark:text-white text-lg font-bold">
+                  DataBridge
+                </h2>
+              </div>
+              <p class="text-[#617289] dark:text-gray-400 text-sm">
+                Connecting technology with business intelligence. Leading the
+                way in specialized BPO and data services globally.
+              </p>
+            </div>
+            <div>
+              <h4 class="text-[#111418] dark:text-white font-bold mb-4">
+                Quick Links
+              </h4>
+              <ul
+                class="flex flex-col gap-2 text-sm text-[#617289] dark:text-gray-400"
+              >
+                <li>
+                  <a class="hover:text-primary transition-colors" href="#"
+                    >About DataBridge</a
+                  >
+                </li>
+                <li>
+                  <a class="hover:text-primary transition-colors" href="#"
+                    >Our Process</a
+                  >
+                </li>
+                <li>
+                  <a class="hover:text-primary transition-colors" href="#"
+                    >Case Studies</a
+                  >
+                </li>
+                <li>
+                  <a class="hover:text-primary transition-colors" href="#"
+                    >Careers</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-[#111418] dark:text-white font-bold mb-4">
+                Contact
+              </h4>
+              <ul
+                class="flex flex-col gap-2 text-sm text-[#617289] dark:text-gray-400"
+              >
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined !text-sm">mail</span>
+                  info@databridgesolutions.com
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined !text-sm">call</span>
+                  +91-XXXXXXXXXX
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined !text-sm"
+                    >location_on</span
+                  >
+                  Hyderabad HQ
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-[#111418] dark:text-white font-bold mb-4">
+                Newsletter
+              </h4>
+              <div class="flex gap-2">
+                <input
+                  class="w-full rounded-lg border-[#dbe0e6] dark:border-gray-800 dark:bg-gray-900 text-sm focus:ring-primary"
+                  placeholder="Email"
+                  type="email"
+                />
+                <button class="p-2 bg-primary text-white rounded-lg">
+                  <span class="material-symbols-outlined">send</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="pt-8 border-t border-[#f0f2f4] dark:border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-[#617289] dark:text-gray-500 text-xs"
+          >
+            <p>© 2026 DataBridge Solutions. All rights reserved.</p>
+            <div class="flex gap-6">
+              <a class="hover:text-primary" href="#">Privacy Policy</a>
+              <a class="hover:text-primary" href="#">Terms of Service</a>
+              <a class="hover:text-primary" href="#">Compliance</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+  <script>
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle("dark");
+    }
+  </script>
+</html>

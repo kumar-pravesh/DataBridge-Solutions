@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+      DataBridge Solutions | Delivering Reliable Data &amp; XML Solutions
+    </title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#136dec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101822",
+            },
+            fontFamily: {
+              display: ["Inter"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white transition-colors duration-300"
+  >
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden"
+    >
+      <header
+        class="sticky top-0 z-50 w-full bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-solid border-[#f0f2f4] dark:border-gray-800"
+      >
+        <div
+          class="max-w-[1280px] mx-auto px-6 md:px-10 py-4 flex items-center justify-between"
+        >
+          <div class="flex items-center gap-3">
+            <div class="size-8 text-primary">
+              <svg
+                fill="none"
+                viewBox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                ></path>
+                <path
+                  clip-rule="evenodd"
+                  d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                ></path>
+              </svg>
+            </div>
+            <h2
+              class="text-[#111418] dark:text-white text-xl font-bold tracking-tight"
+            >
+              DataBridge Solutions
+            </h2>
+          </div>
+          <nav class="hidden lg:flex items-center gap-8">
+            <a
+              class="text-sm font-medium hover:text-primary transition-colors"
+              href="#"
+              >Home</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary transition-colors"
+              href="./aboutUs.html"
+              >About Us</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary transition-colors"
+              href="./services.html"
+              >Services</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary transition-colors"
+              href="./industries.html"
+              >Industries</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary transition-colors"
+              href="./careers.html"
+              >Careers</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary transition-colors"
+              href="./contactus.html"
+              >Contact</a
+            >
+          </nav>
+          <div class="flex items-center gap-4">
+            <!-- Dark Mode Toggle -->
+            <button
+              onclick="toggleDarkMode()"
+              class="border border-gray-300 dark:border-gray-600 px-3 py-2 rounded text-sm"
+              title="Toggle Dark Mode"
+            >
+              🌙
+            </button>
+
+            <button
+              class="bg-primary hover:bg-primary/90 text-white text-sm font-bold h-10 px-6 rounded-lg transition-all"
+            >
+              Get a Quote
+            </button>
+          </div>
+        </div>
+      </header>
+      <main class="flex-1">
+        <section class="max-w-[1280px] mx-auto px-6 md:px-10 py-16 lg:py-24">
+          <div class="@container">
+            <div class="flex flex-col gap-10 @[864px]:flex-row items-center">
+              <div class="flex flex-col gap-8 flex-1 @[864px]:max-w-[50%]">
+                <div class="flex flex-col gap-4">
+                  <span
+                    class="text-primary font-bold tracking-widest uppercase text-xs"
+                    >Innovation in Data Processing</span
+                  >
+                  <h1
+                    class="text-[#111418] dark:text-white text-4xl font-black leading-tight tracking-tight @[480px]:text-6xl"
+                  >
+                    Delivering Reliable Data &amp; XML Solutions for Growing
+                    Businesses
+                  </h1>
+                  <p
+                    class="text-[#617289] dark:text-gray-400 text-lg leading-relaxed max-w-[600px]"
+                  >
+                    We provide high-end, scalable data management and XML
+                    conversion services designed to optimize your workflow. Our
+                    expertise in BPO ensures that your business stays agile,
+                    accurate, and ahead of the curve in a data-driven world.
+                  </p>
+                </div>
+                <div class="flex flex-wrap gap-4">
+                  <button
+                    class="bg-primary hover:scale-[1.02] text-white text-base font-bold h-14 px-8 rounded-lg shadow-lg shadow-primary/25 transition-all"
+                  >
+                    Get a Quote
+                  </button>
+                  <button
+                    class="bg-[#f0f2f4] dark:bg-gray-800 hover:bg-[#e4e6e8] dark:hover:bg-gray-700 text-[#111418] dark:text-white text-base font-bold h-14 px-8 rounded-lg transition-all"
+                  >
+                    Contact Us
+                  </button>
+                </div>
+              </div>
+              <div class="w-full flex-1">
+                <div
+                  class="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl"
+                >
+                  <img
+                    class="w-full h-full object-cover"
+                    data-alt="Modern corporate office and data flow graphics"
+                    src="./assets/images/hero.jpeg"
+                  />
+                  <div
+                    class="absolute inset-0 bg-primary/5 mix-blend-multiply"
+                  ></div>
+                  <div
+                    class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20"
+                  >
+                    <span
+                      class="material-symbols-outlined text-[200px] text-white"
+                      >data_thresholding</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="bg-white dark:bg-gray-900 border-y border-[#f0f2f4] dark:border-gray-800"
+        >
+          <div class="max-w-[1280px] mx-auto px-6 md:px-10 py-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div class="flex flex-col gap-1 text-center md:text-left">
+                <p class="text-primary text-4xl font-black">10+</p>
+                <p
+                  class="text-[#617289] dark:text-gray-400 text-sm font-medium uppercase tracking-widest"
+                >
+                  Years Experience
+                </p>
+              </div>
+              <div class="flex flex-col gap-1 text-center md:text-left">
+                <p class="text-primary text-4xl font-black">99.9%</p>
+                <p
+                  class="text-[#617289] dark:text-gray-400 text-sm font-medium uppercase tracking-widest"
+                >
+                  Accuracy Rate
+                </p>
+              </div>
+              <div class="flex flex-col gap-1 text-center md:text-left">
+                <p class="text-primary text-4xl font-black">ISO</p>
+                <p
+                  class="text-[#617289] dark:text-gray-400 text-sm font-medium uppercase tracking-widest"
+                >
+                  Certified Standards
+                </p>
+              </div>
+              <div class="flex flex-col gap-1 text-center md:text-left">
+                <p class="text-primary text-4xl font-black">24/7</p>
+                <p
+                  class="text-[#617289] dark:text-gray-400 text-sm font-medium uppercase tracking-widest"
+                >
+                  Global Support
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="max-w-[1280px] mx-auto px-6 md:px-10 py-20">
+          <div class="flex flex-col gap-4 mb-12">
+            <h2
+              class="text-3xl font-black tracking-tight text-[#111418] dark:text-white"
+            >
+              Our Core Services
+            </h2>
+            <p class="text-[#617289] dark:text-gray-400 max-w-2xl">
+              Tailored technical and back-office solutions to help your business
+              scale efficiently.
+            </p>
+          </div>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6"
+          >
+            <div
+              class="flex flex-col gap-5 rounded-xl border border-[#dbe0e6] dark:border-gray-800 bg-white dark:bg-gray-900 p-8 hover:shadow-xl transition-all group"
+            >
+              <div
+                class="size-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors"
+              >
+                <span class="material-symbols-outlined text-3xl">code</span>
+              </div>
+              <div class="flex flex-col gap-2">
+                <h3 class="text-[#111418] dark:text-white text-lg font-bold">
+                  XML Conversion &amp; Processing
+                </h3>
+                <p
+                  class="text-[#617289] dark:text-gray-400 text-sm leading-relaxed"
+                >
+                  Structural conversion of complex data into standardized XML
+                  formats for seamless integration.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex flex-col gap-5 rounded-xl border border-[#dbe0e6] dark:border-gray-800 bg-white dark:bg-gray-900 p-8 hover:shadow-xl transition-all group"
+            >
+              <div
+                class="size-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors"
+              >
+                <span class="material-symbols-outlined text-3xl">keyboard</span>
+              </div>
+              <div class="flex flex-col gap-2">
+                <h3 class="text-[#111418] dark:text-white text-lg font-bold">
+                  Data Entry &amp; Data Management
+                </h3>
+                <p
+                  class="text-[#617289] dark:text-gray-400 text-sm leading-relaxed"
+                >
+                  High-volume data entry and lifecycle management with a focus
+                  on data integrity and organization.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex flex-col gap-5 rounded-xl border border-[#dbe0e6] dark:border-gray-800 bg-white dark:bg-gray-900 p-8 hover:shadow-xl transition-all group"
+            >
+              <div
+                class="size-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors"
+              >
+                <span class="material-symbols-outlined text-3xl">scanner</span>
+              </div>
+              <div class="flex flex-col gap-2">
+                <h3 class="text-[#111418] dark:text-white text-lg font-bold">
+                  Document Digitization
+                </h3>
+                <p
+                  class="text-[#617289] dark:text-gray-400 text-sm leading-relaxed"
+                >
+                  Transforming physical archives into searchable digital assets
+                  to improve accessibility and storage.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex flex-col gap-5 rounded-xl border border-[#dbe0e6] dark:border-gray-800 bg-white dark:bg-gray-900 p-8 hover:shadow-xl transition-all group"
+            >
+              <div
+                class="size-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors"
+              >
+                <span class="material-symbols-outlined text-3xl">rule</span>
+              </div>
+              <div class="flex flex-col gap-2">
+                <h3 class="text-[#111418] dark:text-white text-lg font-bold">
+                  Data Validation &amp; Quality Check
+                </h3>
+                <p
+                  class="text-[#617289] dark:text-gray-400 text-sm leading-relaxed"
+                >
+                  Rigorous multi-layer auditing to ensure the highest standards
+                  of data accuracy and reliability.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex flex-col gap-5 rounded-xl border border-[#dbe0e6] dark:border-gray-800 bg-white dark:bg-gray-900 p-8 hover:shadow-xl transition-all group"
+            >
+              <div
+                class="size-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors"
+              >
+                <span class="material-symbols-outlined text-3xl"
+                  >support_agent</span
+                >
+              </div>
+              <div class="flex flex-col gap-2">
+                <h3 class="text-[#111418] dark:text-white text-lg font-bold">
+                  IT &amp; BPO Support Services
+                </h3>
+                <p
+                  class="text-[#617289] dark:text-gray-400 text-sm leading-relaxed"
+                >
+                  End-to-end technical support and business process outsourcing
+                  for streamlined operations.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="bg-primary py-20 overflow-hidden relative">
+          <div
+            class="absolute top-0 right-0 -mt-20 -mr-20 size-80 bg-white/10 rounded-full blur-3xl"
+          ></div>
+          <div
+            class="absolute bottom-0 left-0 -mb-20 -ml-20 size-80 bg-white/10 rounded-full blur-3xl"
+          ></div>
+          <div class="max-w-[1280px] mx-auto px-6 md:px-10 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+              <div class="lg:w-1/2">
+                <h2 class="text-white text-4xl font-black mb-8 leading-tight">
+                  Why Choose DataBridge Solutions?
+                </h2>
+                <ul class="space-y-6">
+                  <li class="flex gap-4 items-center">
+                    <div
+                      class="bg-white/20 p-2 rounded-full text-white shrink-0"
+                    >
+                      <span class="material-symbols-outlined text-xl"
+                        >verified_user</span
+                      >
+                    </div>
+                    <span class="text-white font-bold text-lg"
+                      >Experienced and skilled professionals</span
+                    >
+                  </li>
+                  <li class="flex gap-4 items-center">
+                    <div
+                      class="bg-white/20 p-2 rounded-full text-white shrink-0"
+                    >
+                      <span class="material-symbols-outlined text-xl"
+                        >high_quality</span
+                      >
+                    </div>
+                    <span class="text-white font-bold text-lg"
+                      >High accuracy and quality assurance</span
+                    >
+                  </li>
+                  <li class="flex gap-4 items-center">
+                    <div
+                      class="bg-white/20 p-2 rounded-full text-white shrink-0"
+                    >
+                      <span class="material-symbols-outlined text-xl"
+                        >security</span
+                      >
+                    </div>
+                    <span class="text-white font-bold text-lg"
+                      >Secure data handling</span
+                    >
+                  </li>
+                  <li class="flex gap-4 items-center">
+                    <div
+                      class="bg-white/20 p-2 rounded-full text-white shrink-0"
+                    >
+                      <span class="material-symbols-outlined text-xl"
+                        >schedule</span
+                      >
+                    </div>
+                    <span class="text-white font-bold text-lg"
+                      >On-time project delivery</span
+                    >
+                  </li>
+                  <li class="flex gap-4 items-center">
+                    <div
+                      class="bg-white/20 p-2 rounded-full text-white shrink-0"
+                    >
+                      <span class="material-symbols-outlined text-xl"
+                        >payments</span
+                      >
+                    </div>
+                    <span class="text-white font-bold text-lg"
+                      >Cost-effective solutions</span
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div
+                class="lg:w-1/2 flex flex-col gap-8 bg-white/10 backdrop-blur-md p-10 rounded-2xl border border-white/20"
+              >
+                <h3 class="text-white text-2xl font-bold">
+                  Partner with the industry leaders in data excellence.
+                </h3>
+                <p class="text-blue-50 leading-relaxed">
+                  Join hundreds of growing businesses that rely on our technical
+                  precision and operational support to drive their success.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                  <button
+                    class="bg-white text-primary text-base font-bold h-12 px-10 rounded-lg hover:bg-blue-50 transition-colors"
+                  >
+                    Get a Quote
+                  </button>
+                  <button
+                    class="bg-transparent border-2 border-white text-white text-base font-bold h-12 px-10 rounded-lg hover:bg-white/10 transition-colors"
+                  >
+                    Contact Us
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer
+        class="bg-white dark:bg-background-dark border-t border-[#f0f2f4] dark:border-gray-800 pt-16 pb-8"
+      >
+        <div class="max-w-[1280px] mx-auto px-6 md:px-10">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16"
+          >
+            <div class="flex flex-col gap-6">
+              <div class="flex items-center gap-3">
+                <div class="size-6 text-primary">
+                  <svg
+                    fill="none"
+                    viewBox="0 0 48 48"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                    ></path>
+                    <path
+                      clip-rule="evenodd"
+                      d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                    ></path>
+                  </svg>
+                </div>
+                <h2 class="text-xl font-bold tracking-tight">
+                  DataBridge Solutions
+                </h2>
+              </div>
+              <p
+                class="text-[#617289] dark:text-gray-400 text-sm leading-relaxed"
+              >
+                Leading provider of IT and BPO services worldwide. Specializing
+                in high-precision XML conversion and secure data management.
+              </p>
+              <div class="flex gap-4">
+                <a
+                  class="text-[#617289] dark:text-gray-400 hover:text-primary transition-colors"
+                  href="#"
+                >
+                  <svg class="size-5 fill-current" viewBox="0 0 24 24">
+                    <path
+                      d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                    ></path>
+                  </svg>
+                </a>
+                <a
+                  class="text-[#617289] dark:text-gray-400 hover:text-primary transition-colors"
+                  href="#"
+                >
+                  <svg class="size-5 fill-current" viewBox="0 0 24 24">
+                    <path
+                      d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.221 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="flex flex-col gap-6">
+              <h4 class="text-sm font-bold uppercase tracking-widest">
+                Quick Links
+              </h4>
+              <ul class="flex flex-col gap-3">
+                <li>
+                  <a
+                    class="text-sm text-[#617289] dark:text-gray-400 hover:text-primary transition-colors"
+                    href="#"
+                    >About Us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-sm text-[#617289] dark:text-gray-400 hover:text-primary transition-colors"
+                    href="#"
+                    >Service Offerings</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-sm text-[#617289] dark:text-gray-400 hover:text-primary transition-colors"
+                    href="#"
+                    >Industry Solutions</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-sm text-[#617289] dark:text-gray-400 hover:text-primary transition-colors"
+                    href="#"
+                    >Case Studies</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-sm text-[#617289] dark:text-gray-400 hover:text-primary transition-colors"
+                    href="#"
+                    >Global Locations</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="flex flex-col gap-6">
+              <h4 class="text-sm font-bold uppercase tracking-widest">
+                Our Services
+              </h4>
+              <ul class="flex flex-col gap-3">
+                <li>
+                  <a
+                    class="text-sm text-[#617289] dark:text-gray-400 hover:text-primary transition-colors"
+                    href="#"
+                    >XML Conversion</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-sm text-[#617289] dark:text-gray-400 hover:text-primary transition-colors"
+                    href="#"
+                    >Data Management</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-sm text-[#617289] dark:text-gray-400 hover:text-primary transition-colors"
+                    href="#"
+                    >Digitization</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-sm text-[#617289] dark:text-gray-400 hover:text-primary transition-colors"
+                    href="#"
+                    >Quality Assurance</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-sm text-[#617289] dark:text-gray-400 hover:text-primary transition-colors"
+                    href="#"
+                    >BPO Support</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="flex flex-col gap-6">
+              <h4 class="text-sm font-bold uppercase tracking-widest">
+                Contact Us
+              </h4>
+              <ul class="flex flex-col gap-4">
+                <li
+                  class="flex gap-3 text-sm text-[#617289] dark:text-gray-400"
+                >
+                  <span class="material-symbols-outlined text-primary text-lg"
+                    >mail</span
+                  >
+                  <span>info@databridgesolutions.com</span>
+                </li>
+                <li
+                  class="flex gap-3 text-sm text-[#617289] dark:text-gray-400"
+                >
+                  <span class="material-symbols-outlined text-primary text-lg"
+                    >call</span
+                  >
+                  <span>+91-XXXXXXXXXX</span>
+                </li>
+                <li
+                  class="flex gap-3 text-sm text-[#617289] dark:text-gray-400"
+                >
+                  <span class="material-symbols-outlined text-primary text-lg"
+                    >location_on</span
+                  >
+                  <span>Priyansh Technology Madhapur </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="pt-8 border-t border-[#f0f2f4] dark:border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4"
+          >
+            <p class="text-xs text-[#617289] dark:text-gray-400">
+              © 2026 DataBridge Solutions Inc. All rights reserved.
+            </p>
+            <div class="flex gap-6">
+              <a
+                class="text-xs text-[#617289] dark:text-gray-400 hover:text-primary"
+                href="#"
+                >Privacy Policy</a
+              >
+              <a
+                class="text-xs text-[#617289] dark:text-gray-400 hover:text-primary"
+                href="#"
+                >Terms of Service</a
+              >
+              <a
+                class="text-xs text-[#617289] dark:text-gray-400 hover:text-primary"
+                href="#"
+                >Cookie Settings</a
+              >
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+  <script>
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle("dark");
+    }
+  </script>
+</html>

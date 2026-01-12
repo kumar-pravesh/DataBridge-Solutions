@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Careers at DataBridge</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#136dec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101822",
+            },
+            fontFamily: {
+              display: ["Inter"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-white"
+  >
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden"
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        <header
+          class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#f0f2f4] dark:border-[#2a3038] px-10 py-3 bg-white dark:bg-[#111418] sticky top-0 z-50"
+        >
+          <div class="flex items-center gap-8">
+            <div class="flex items-center gap-4 text-primary">
+              <div class="size-6">
+                <svg
+                  fill="none"
+                  viewBox="0 0 48 48"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z"
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                  ></path>
+                  <path
+                    clip-rule="evenodd"
+                    d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z"
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                  ></path>
+                </svg>
+              </div>
+              <h2
+                class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]"
+              >
+                DataBridge Solutions
+              </h2>
+            </div>
+            <div class="hidden md:flex items-center gap-9">
+              <a
+                class="text-[#111418] dark:text-white text-sm font-medium leading-normal hover:text-primary transition-colors"
+                href="./services.html"
+                >Services</a
+              >
+              <a
+                class="text-[#111418] dark:text-white text-sm font-medium leading-normal hover:text-primary transition-colors"
+                href="./aboutUs.html"
+                >About Us</a
+              >
+              <a
+                class="text-[#111418] dark:text-white text-sm font-medium leading-normal hover:text-primary transition-colors"
+                href="#"
+                >Case Studies</a
+              >
+              <a
+                class="text-primary text-sm font-bold leading-normal"
+                href="./careers.html"
+                >Careers</a
+              >
+              <a
+                class="text-[#111418] dark:text-white text-sm font-medium leading-normal hover:text-primary transition-colors"
+                href="./contactus.html"
+                >Contact</a
+              >
+            </div>
+          </div>
+          <div class="flex flex-1 justify-end gap-4">
+            <!-- 🌙 Dark Mode Toggle Button -->
+            <button
+              onclick="toggleDarkMode()"
+              class="h-10 w-10 flex items-center justify-center rounded-full border border-slate-300 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+              title="Toggle Dark Mode"
+            >
+              🌙
+            </button>
+            <button
+              class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal"
+            >
+              <span class="truncate">Get a Quote</span>
+            </button>
+          </div>
+        </header>
+        <div class="w-full flex justify-center py-8 px-4 md:px-10 lg:px-40">
+          <div class="w-full max-w-[1200px]">
+            <div class="@container">
+              <div
+                class="flex min-h-[450px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-center justify-center p-8 text-center"
+                style="
+                  background-image: linear-gradient(
+                      rgba(0, 0, 0, 0.6) 0%,
+                      rgba(0, 0, 0, 0.8) 100%
+                    ),
+                    url('https://lh3.googleusercontent.com/aida-public/AB6AXuDo1fO1czGltJOocNOpQFk5BGza5HvvJ2HHbOT2f5m_52SvawubIzLiq9steyopGwjNS4JcxizyKLKprccULb_dpVYMeFyS7ML7gweiKg5YlxFVQQJCtG0b8zuYSxx4GeO0S9dW_THWDddPfD_UMA7PFWVH4Ew4QbxluOAaiE7FnGu9-q53KzX2XCgaKOUWnUR6C1gAHMmHFQqNkDVP33Utfs_zVqkUea3fnxNRc36ToOG1W2D154xpJolB9Qcklkx-vYRKOCnmp3h8');
+                "
+              >
+                <div class="flex flex-col gap-4 max-w-3xl">
+                  <h1
+                    class="text-white text-4xl md:text-6xl font-black leading-tight tracking-tight uppercase"
+                  >
+                    Work With Us
+                  </h1>
+                  <p
+                    class="text-white text-lg md:text-xl font-light opacity-90 leading-relaxed"
+                  >
+                    At DataBridge Solutions, we believe in building a
+                    professional and growth-oriented work culture. We provide
+                    opportunities to learn, develop skills, and grow your career
+                    in the IT and data services industry.
+                  </p>
+                </div>
+                <button
+                  class="mt-4 flex min-w-[180px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-base font-bold transition-transform hover:scale-105"
+                >
+                  <span class="truncate">View Open Positions</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <main class="flex-1 flex justify-center py-5 px-4 md:px-10 lg:px-40">
+          <div
+            class="layout-content-container flex flex-col md:flex-row gap-8 w-full max-w-[1200px]"
+          >
+            <div class="flex-[2] flex flex-col gap-6">
+              <div
+                class="flex flex-col gap-4 p-6 bg-primary/5 rounded-xl border border-primary/10"
+              >
+                <h2
+                  class="text-[#111418] dark:text-white text-[28px] font-bold leading-tight tracking-tight"
+                >
+                  Current Openings
+                </h2>
+                <p class="text-[#4b5563] dark:text-gray-300 text-base italic">
+                  Interested candidates can apply by submitting their basic
+                  details through the career application form. Our HR team will
+                  contact shortlisted candidates.
+                </p>
+              </div>
+              <div class="flex flex-col gap-4">
+                <div
+                  class="flex items-center gap-4 bg-white dark:bg-[#1a2430] p-6 rounded-xl border border-transparent hover:border-primary/30 transition-all shadow-sm group"
+                >
+                  <div
+                    class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-14"
+                  >
+                    <span class="material-symbols-outlined text-3xl"
+                      >database</span
+                    >
+                  </div>
+                  <div class="flex flex-col flex-1">
+                    <p
+                      class="text-[#111418] dark:text-white text-xl font-bold leading-normal"
+                    >
+                      Data Processing Executive
+                    </p>
+                    <p
+                      class="text-[#617289] dark:text-gray-400 text-sm font-normal"
+                    >
+                      Full-time • Office • Data Operations
+                    </p>
+                  </div>
+                  <div class="shrink-0">
+                    <button
+                      class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-[#f0f2f4] dark:bg-[#2a3038] text-[#111418] dark:text-white text-sm font-semibold hover:bg-primary hover:text-white transition-colors"
+                    >
+                      Apply Now
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-4 bg-white dark:bg-[#1a2430] p-6 rounded-xl border border-transparent hover:border-primary/30 transition-all shadow-sm group"
+                >
+                  <div
+                    class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-14"
+                  >
+                    <span class="material-symbols-outlined text-3xl"
+                      >terminal</span
+                    >
+                  </div>
+                  <div class="flex flex-col flex-1">
+                    <p
+                      class="text-[#111418] dark:text-white text-xl font-bold leading-normal"
+                    >
+                      XML Executive
+                    </p>
+                    <p
+                      class="text-[#617289] dark:text-gray-400 text-sm font-normal"
+                    >
+                      Full-time • Hybrid • Digital Publishing
+                    </p>
+                  </div>
+                  <div class="shrink-0">
+                    <button
+                      class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-[#f0f2f4] dark:bg-[#2a3038] text-[#111418] dark:text-white text-sm font-semibold hover:bg-primary hover:text-white transition-colors"
+                    >
+                      Apply Now
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-4 bg-white dark:bg-[#1a2430] p-6 rounded-xl border border-transparent hover:border-primary/30 transition-all shadow-sm group"
+                >
+                  <div
+                    class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-14"
+                  >
+                    <span class="material-symbols-outlined text-3xl"
+                      >fact_check</span
+                    >
+                  </div>
+                  <div class="flex flex-col flex-1">
+                    <p
+                      class="text-[#111418] dark:text-white text-xl font-bold leading-normal"
+                    >
+                      Quality Analyst
+                    </p>
+                    <p
+                      class="text-[#617289] dark:text-gray-400 text-sm font-normal"
+                    >
+                      Full-time • Remote • QA &amp; Standards
+                    </p>
+                  </div>
+                  <div class="shrink-0">
+                    <button
+                      class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-[#f0f2f4] dark:bg-[#2a3038] text-[#111418] dark:text-white text-sm font-semibold hover:bg-primary hover:text-white transition-colors"
+                    >
+                      Apply Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-1">
+              <div
+                class="sticky top-24 bg-white dark:bg-[#1a2430] p-6 rounded-xl border border-[#f0f2f4] dark:border-[#2a3038] shadow-lg"
+              >
+                <h3
+                  class="text-xl font-bold mb-1 text-[#111418] dark:text-white"
+                >
+                  Quick Apply
+                </h3>
+                <p class="text-[#617289] dark:text-gray-400 text-sm mb-6">
+                  Submit your basic details to start your application.
+                </p>
+                <form class="flex flex-col gap-4">
+                  <div class="flex flex-col gap-1.5">
+                    <label
+                      class="text-sm font-medium text-[#111418] dark:text-white"
+                      >Full Name</label
+                    >
+                    <input
+                      class="w-full rounded-lg border-[#dbe0e6] dark:border-[#2a3038] dark:bg-[#111418] dark:text-white focus:border-primary focus:ring-1 focus:ring-primary h-11 px-4"
+                      placeholder="Full Name"
+                      type="text"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-1.5">
+                    <label
+                      class="text-sm font-medium text-[#111418] dark:text-white"
+                      >Email Address</label
+                    >
+                    <input
+                      class="w-full rounded-lg border-[#dbe0e6] dark:border-[#2a3038] dark:bg-[#111418] dark:text-white focus:border-primary focus:ring-1 focus:ring-primary h-11 px-4"
+                      placeholder="Email Address"
+                      type="email"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-1.5">
+                    <label
+                      class="text-sm font-medium text-[#111418] dark:text-white"
+                      >Resume Upload</label
+                    >
+                    <div
+                      class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-[#dbe0e6] dark:border-[#2a3038] rounded-lg cursor-pointer hover:bg-[#f6f7f8] dark:hover:bg-[#111418] transition-colors group"
+                    >
+                      <span
+                        class="material-symbols-outlined text-[#617289] group-hover:text-primary mb-2"
+                        >cloud_upload</span
+                      >
+                      <p class="text-xs text-[#617289]">PDF, DOCX (Max 5MB)</p>
+                      <input class="hidden" type="file" />
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-1.5">
+                    <label
+                      class="text-sm font-medium text-[#111418] dark:text-white"
+                      >Message</label
+                    >
+                    <textarea
+                      class="w-full rounded-lg border-[#dbe0e6] dark:border-[#2a3038] dark:bg-[#111418] dark:text-white focus:border-primary focus:ring-1 focus:ring-primary px-4 py-2 resize-none"
+                      placeholder="Briefly introduce yourself..."
+                      rows="3"
+                    ></textarea>
+                  </div>
+                  <button
+                    class="w-full bg-primary text-white font-bold h-12 rounded-lg hover:bg-primary/90 transition-all mt-2"
+                    type="submit"
+                  >
+                    Submit Application
+                  </button>
+                  <p class="text-[11px] text-[#617289] text-center">
+                    Our HR team will contact shortlisted candidates.
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </main>
+        <section
+          class="bg-white dark:bg-[#111418] py-16 px-4 md:px-10 lg:px-40 border-t border-[#f0f2f4] dark:border-[#2a3038]"
+        >
+          <div class="max-w-[1200px] mx-auto">
+            <div class="text-center mb-12">
+              <h3
+                class="text-3xl font-bold text-[#111418] dark:text-white mb-4"
+              >
+                Why Choose DataBridge?
+              </h3>
+              <p class="text-[#617289] dark:text-gray-400">
+                We offer more than just a job; we offer a platform to thrive.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div
+                class="flex flex-col items-center text-center p-8 bg-background-light dark:bg-[#1a2430] rounded-xl border border-transparent hover:border-primary/20 transition-all"
+              >
+                <div
+                  class="size-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6"
+                >
+                  <span class="material-symbols-outlined text-4xl"
+                    >trending_up</span
+                  >
+                </div>
+                <h4 class="text-xl font-bold mb-3">Growth Oriented</h4>
+                <p
+                  class="text-sm text-[#617289] dark:text-gray-400 leading-relaxed"
+                >
+                  Continuous learning opportunities and clear career paths
+                  within the data services industry.
+                </p>
+              </div>
+              <div
+                class="flex flex-col items-center text-center p-8 bg-background-light dark:bg-[#1a2430] rounded-xl border border-transparent hover:border-primary/20 transition-all"
+              >
+                <div
+                  class="size-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6"
+                >
+                  <span class="material-symbols-outlined text-4xl">groups</span>
+                </div>
+                <h4 class="text-xl font-bold mb-3">Professional Culture</h4>
+                <p
+                  class="text-sm text-[#617289] dark:text-gray-400 leading-relaxed"
+                >
+                  A collaborative environment featuring young professionals and
+                  dedicated teamwork.
+                </p>
+              </div>
+              <div
+                class="flex flex-col items-center text-center p-8 bg-background-light dark:bg-[#1a2430] rounded-xl border border-transparent hover:border-primary/20 transition-all"
+              >
+                <div
+                  class="size-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6"
+                >
+                  <span class="material-symbols-outlined text-4xl">school</span>
+                </div>
+                <h4 class="text-xl font-bold mb-3">Skill Development</h4>
+                <p
+                  class="text-sm text-[#617289] dark:text-gray-400 leading-relaxed"
+                >
+                  Hands-on training with modern tools in IT and BPO operations
+                  to keep you ahead.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <footer
+          class="bg-white dark:bg-[#111418] py-8 px-10 border-t border-[#f0f2f4] dark:border-[#2a3038]"
+        >
+          <div
+            class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4"
+          >
+            <p class="text-sm text-[#617289] dark:text-gray-400">
+              © 2026 DataBridge Solutions. All rights reserved.
+            </p>
+            <div class="flex gap-6">
+              <a
+                class="text-sm text-[#617289] dark:text-gray-400 hover:text-primary"
+                href="#"
+                >Privacy Policy</a
+              >
+              <a
+                class="text-sm text-[#617289] dark:text-gray-400 hover:text-primary"
+                href="#"
+                >Terms of Use</a
+              >
+              <a
+                class="text-sm text-[#617289] dark:text-gray-400 hover:text-primary"
+                href="#"
+                >Equal Opportunity</a
+              >
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+  <script>
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle("dark");
+    }
+  </script>
+</html>
