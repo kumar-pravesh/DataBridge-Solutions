@@ -354,35 +354,64 @@
         <div
           class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10 py-4 flex items-center justify-between gap-4"
         >
-          <div class="flex items-center gap-3 shrink-0">
-            <div
-              class="size-9 text-primary dark:text-accent-cyan drop-shadow-[0_0_8px_rgba(34,211,238,0.4)]"
-            >
+          <!-- Logo section -->
+          <div class="flex items-center gap-4 group cursor-pointer shrink-0">
+            <div class="relative flex items-center justify-center size-11">
               <svg
+                class="w-full h-full text-primary dark:text-accent-cyan transition-transform duration-500 group-hover:scale-110"
                 fill="none"
-                viewBox="0 0 48 48"
+                viewBox="0 0 44 44"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  clip-rule="evenodd"
-                  d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z"
-                  fill="currentColor"
-                  fill-rule="evenodd"
-                ></path>
+                  d="M12 10C12 10 22 10 22 22C22 34 12 34 12 34"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-width="3.5"
+                />
                 <path
-                  clip-rule="evenodd"
-                  d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z"
-                  fill="currentColor"
-                  fill-rule="evenodd"
-                ></path>
+                  d="M22 10C22 10 32 10 32 22C32 34 22 34 22 34"
+                  stroke="url(#logo-grad)"
+                  stroke-linecap="round"
+                  stroke-width="3.5"
+                  opacity="0.85"
+                />
+                <circle cx="12" cy="10" r="2.5" fill="currentColor" />
+                <circle cx="32" cy="22" r="2.5" fill="url(#logo-grad)" />
+                <circle cx="12" cy="34" r="2.5" fill="currentColor" />
+
+                <defs>
+                  <linearGradient
+                    id="logo-grad"
+                    x1="22"
+                    y1="10"
+                    x2="32"
+                    y2="34"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#2E7CFF" />
+                    <stop offset="1" stop-color="#00F0FF" />
+                  </linearGradient>
+                </defs>
               </svg>
             </div>
-            <h2
-              class="text-[#111418] dark:text-white text-xl font-black tracking-tight"
-            >
-              DataBridge Solutions
-            </h2>
+
+            <div class="flex flex-col leading-none">
+              <span
+                class="text-[#111418] dark:text-white text-xl font-extrabold tracking-tight"
+              >
+                DataBridge
+              </span>
+              <span
+                class="text-[10px] font-bold text-primary dark:text-accent-cyan tracking-[0.35em] uppercase mt-1"
+              >
+                Solutions
+              </span>
+            </div>
           </div>
+          <!-- Logo end here -->
+
+          <!-- Nav Bar section -->
           <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
             <a
               class="text-sm font-semibold text-[#111418] dark:text-gray-300 hover:text-primary dark:hover:text-accent-cyan transition-colors"
@@ -432,7 +461,13 @@
           </div>
         </div>
       </header>
+
       <main class="flex-1">   
+
+
+      <main class="flex-1">
+        <!-- Hero Section With Crousel -->
+
         <section
           class="relative min-h-[650px] lg:min-h-[90vh] w-full overflow-hidden flex items-center"
         >
@@ -576,6 +611,8 @@
             </div>
           </div>
         </section>
+
+        <!-- core services section -->
         <section
           class="max-w-[1280px] mx-auto px-6 md:px-10 py-24 md:py-32 overflow-hidden"
         >
@@ -704,6 +741,8 @@
             </div>
           </div>
         </section>
+
+        <!-- Why choose section -->
         <section class="bg-[#020617] py-24 md:py-32 overflow-hidden relative">
           <div
             class="absolute top-0 right-0 -mt-20 -mr-20 size-96 bg-accent-cyan/20 rounded-full blur-[100px]"
@@ -803,6 +842,8 @@
           </div>
         </section>
       </main>
+
+      <!-- footer section -->
       <footer
         class="bg-white dark:bg-background-dark border-t border-gray-200 dark:border-white/5 pt-20 md:pt-24 pb-12 shrink-0 transition-colors duration-500"
       >
