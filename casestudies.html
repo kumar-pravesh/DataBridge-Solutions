@@ -1,0 +1,1160 @@
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Case Studies | DataBridge Solutions</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#081121",
+              "brand-blue": "#0A4AD9",
+              "electric-blue": "#2E7CFF",
+              "neon-cyan": "#00F0FF",
+              "background-dark": "#020617",
+              "glass-border": "rgba(46, 124, 255, 0.2)",
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans", "sans-serif"],
+              sans: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "1rem",
+              "2xl": "1.5rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .font-display {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .hero-mesh {
+        background-color: #020617;
+        background-image: radial-gradient(
+            at 0% 0%,
+            rgba(10, 74, 217, 0.15) 0,
+            transparent 50%
+          ),
+          radial-gradient(at 100% 0%, rgba(0, 240, 255, 0.1) 0, transparent 50%),
+          linear-gradient(rgba(2, 6, 23, 0.8), rgba(2, 6, 23, 0.8));
+      }
+      .glass-card {
+        background: rgba(15, 23, 42, 0.4);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(46, 124, 255, 0.15);
+      }
+      .glass-card:hover {
+        border-color: rgba(0, 240, 255, 0.4);
+        box-shadow: 0 0 30px rgba(46, 124, 255, 0.1);
+      }
+      .nav-blur {
+        background: rgba(2, 6, 23, 0.8);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .grid-pattern {
+        background-size: 40px 40px;
+        background-image: linear-gradient(
+            to right,
+            rgba(46, 124, 255, 0.05) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(46, 124, 255, 0.05) 1px,
+            transparent 1px
+          );
+      }
+      .text-glow {
+        text-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+      }
+      .testimonial-glow {
+        box-shadow: 0 0 50px -10px rgba(46, 124, 255, 0.2);
+      }
+      .btn-pdf {
+        @apply relative overflow-hidden bg-background-dark/80 border border-white/10 rounded-lg px-4 py-2 flex items-center gap-2 transition-all duration-300;
+        box-shadow: 0 0 0 1px rgba(0, 240, 255, 0.1);
+      }
+      .btn-pdf:hover {
+        @apply border-neon-cyan/40;
+        box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
+      }
+      .shimmer {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.05),
+          transparent
+        );
+        transition: none;
+      }
+      .btn-pdf:hover .shimmer {
+        animation: shimmer-effect 1.5s infinite;
+      }
+      @keyframes shimmer-effect {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 200%;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-dark text-slate-300 selection:bg-neon-cyan selection:text-background-dark overflow-x-hidden"
+  >
+    <div class="relative flex min-h-screen w-full flex-col">
+      <header class="sticky top-0 z-50 w-full nav-blur border-b border-white/5">
+        <div
+          class="max-w-[1400px] mx-auto px-6 lg:px-10 py-5 flex items-center justify-between"
+        >
+          <div class="flex items-center gap-4 group cursor-pointer">
+            <div class="relative flex items-center justify-center size-11">
+              <svg
+                class="w-full h-full text-brand-blue transition-transform duration-500 group-hover:scale-110"
+                fill="none"
+                viewBox="0 0 44 44"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 10C12 10 22 10 22 22C22 34 12 34 12 34"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-width="3.5"
+                ></path>
+                <path
+                  class="opacity-80"
+                  d="M22 10C22 10 32 10 32 22C32 34 22 34 22 34"
+                  stroke="url(#logo-grad)"
+                  stroke-linecap="round"
+                  stroke-width="3.5"
+                ></path>
+                <circle cx="12" cy="10" fill="currentColor" r="2.5"></circle>
+                <circle cx="32" cy="22" fill="url(#logo-grad)" r="2.5"></circle>
+                <circle cx="12" cy="34" fill="currentColor" r="2.5"></circle>
+                <defs>
+                  <linearGradient
+                    gradientUnits="userSpaceOnUse"
+                    id="logo-grad"
+                    x1="22"
+                    x2="32"
+                    y1="10"
+                    y2="34"
+                  >
+                    <stop stop-color="#2E7CFF"></stop>
+                    <stop offset="1" stop-color="#00F0FF"></stop>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div class="flex flex-col">
+              <h1
+                class="text-white text-xl font-extrabold tracking-tight leading-none font-display"
+              >
+                DataBridge
+              </h1>
+              <span
+                class="text-[10px] font-bold text-electric-blue tracking-[0.4em] uppercase leading-none mt-1.5"
+                >Solutions</span
+              >
+            </div>
+          </div>
+          <nav class="hidden lg:flex items-center gap-10">
+            <!-- <a
+              class="text-sm font-semibold text-slate-400 hover:text-neon-cyan transition-colors"
+              href="#"
+              >Solutions</a
+            > -->
+            <!-- <a
+              class="text-sm font-semibold text-slate-400 hover:text-neon-cyan transition-colors"
+              href="#"
+              >Infrastructure</a
+            > -->
+            <a
+              class="text-sm font-semibold text-white border-b-2 border-neon-cyan pb-1"
+              href="#"
+              >Case Studies</a
+            >
+            <!-- <a
+              class="text-sm font-semibold text-slate-400 hover:text-neon-cyan transition-colors"
+              href="#"
+              >Intelligence</a
+            > -->
+            <a
+              class="text-sm font-semibold text-slate-400 hover:text-neon-cyan transition-colors"
+              href="./contactus.html"
+              >Contact</a
+            >
+          </nav>
+          <div class="flex items-center gap-6">
+            <!-- <button
+              class="hidden sm:block text-sm font-bold text-white hover:text-neon-cyan transition-colors"
+            >
+              Client Login
+            </button> -->
+            <button
+              class="bg-brand-blue hover:bg-electric-blue text-white text-sm font-bold h-11 px-7 rounded-lg transition-all shadow-lg shadow-brand-blue/20 flex items-center gap-2 group"
+            >
+              Get a Quote
+              <span
+                class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform"
+                >arrow_forward</span
+              >
+            </button>
+          </div>
+        </div>
+      </header>
+      <main class="flex-1">
+        <section class="relative pt-32 pb-24 overflow-hidden hero-mesh">
+          <div class="absolute inset-0 grid-pattern opacity-10"></div>
+          <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl">
+              <div
+                class="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-electric-blue/30 bg-electric-blue/5 mb-8 backdrop-blur-md"
+              >
+                <span
+                  class="text-xs font-black tracking-[0.25em] text-neon-cyan uppercase font-display"
+                  >Success Case Studies</span
+                >
+              </div>
+              <h1
+                class="text-5xl md:text-7xl font-black text-white leading-[1.1] tracking-tight mb-8 font-display"
+              >
+                Proven Operational <br /><span
+                  class="text-transparent bg-clip-text bg-gradient-to-r from-electric-blue to-neon-cyan text-glow"
+                  >Excellence.</span
+                >
+              </h1>
+              <p
+                class="max-w-2xl text-lg md:text-xl text-slate-400 leading-relaxed font-medium tracking-wide"
+              >
+                Explore how our high-precision data architecture and BPO
+                solutions drive measurable ROI for global industry leaders.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="pb-32 container mx-auto px-6">
+          <div class="flex flex-col lg:flex-row gap-12">
+            <div class="flex-1">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div
+                  class="glass-card rounded-[2rem] overflow-hidden group flex flex-col"
+                >
+                  <div class="relative h-64 overflow-hidden shrink-0">
+                    <img
+                      alt="XML Conversion"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyvuli9KBLUvbLuuvUWN7wsMfcB24gOLc1WQkzJcxncRMtTaEsqWaTh7LEVai459tmTbomvaMZw6ig-R95m3upVNedyqndCK_SghFBWsNeT5zIRmNKd2sjcrZnuqUv8g0hpYr7F2mm-t-Xb-0eybnfSXEEM9tasTHIqy3wI68pOy9kIFZNCiN72Jlrcl3ebRWFf87uyrOwOAf6tISBC3LR4dQ2jmfWUXNxNqXQ9Cp8M-SBCgCuvw3myrD9gmtbHpgC1rZ8YQBUvR-r"
+                    />
+                    <div
+                      class="absolute top-4 left-4 bg-primary/80 backdrop-blur-md border border-white/10 px-3 py-1 rounded text-[10px] font-black tracking-widest text-neon-cyan uppercase font-display"
+                    >
+                      Publishing
+                    </div>
+                  </div>
+                  <div class="p-8 flex-1 flex flex-col">
+                    <div class="mb-4">
+                      <span
+                        class="text-[10px] font-bold text-electric-blue uppercase tracking-widest"
+                        >Service: XML Conversion</span
+                      >
+                      <h3
+                        class="text-2xl font-bold text-white mt-1 font-display"
+                      >
+                        Accelerating Global Content Distribution
+                      </h3>
+                    </div>
+                    <div class="space-y-4 mb-8 text-sm leading-relaxed">
+                      <div>
+                        <span
+                          class="block font-bold text-white/60 uppercase text-[10px] tracking-widest mb-1"
+                          >Client Challenge</span
+                        >
+                        <p class="text-slate-400">
+                          Inefficient manual conversion of multi-format legacy
+                          manuscripts causing critical publication delays and
+                          data inconsistencies.
+                        </p>
+                      </div>
+                      <div>
+                        <span
+                          class="block font-bold text-white/60 uppercase text-[10px] tracking-widest mb-1"
+                          >Our Solution</span
+                        >
+                        <p class="text-slate-400">
+                          Automated AI-driven XML workflow integrated with
+                          structural validation engines for real-time tagging.
+                        </p>
+                      </div>
+                      <div
+                        class="p-4 bg-white/5 rounded-xl border border-white/10"
+                      >
+                        <span
+                          class="block font-bold text-neon-cyan uppercase text-[10px] tracking-widest mb-1"
+                          >Results</span
+                        >
+                        <p class="text-white font-semibold">
+                          99.9% accuracy achieved with 60% faster publishing
+                          turnaround time.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="mt-auto flex flex-wrap items-center gap-4">
+                      <button
+                        class="flex items-center gap-2 text-sm font-black text-electric-blue uppercase tracking-[0.2em] group/btn"
+                      >
+                        View Details
+                        <span
+                          class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform"
+                          >arrow_right_alt</span
+                        >
+                      </button>
+                      <button class="btn-pdf">
+                        <div class="shimmer"></div>
+                        <span
+                          class="material-symbols-outlined text-neon-cyan text-lg"
+                          >picture_as_pdf</span
+                        >
+                        <span
+                          class="text-[10px] font-bold text-white uppercase tracking-widest"
+                          >Download PDF</span
+                        >
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="glass-card rounded-[2rem] overflow-hidden group flex flex-col"
+                >
+                  <div class="relative h-64 overflow-hidden shrink-0">
+                    <img
+                      alt="Financial Data Management"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZy4DgTkYSmOD8U4P-wYdEHLb6qEFLyL1v5CX24GJLADYYHGTvazrjSz9ZHervPKUtDGR8GvDY2SfYrPdtsL5_LSEhfbhbgGOhmz5kGVoqQ3_4_dteQvZaLeFjhxTBkLP5WAb0QithzupIw1vLJRFBEV7iXA2YXGuqRVasjMMewGC3TYsN-k_fLfa9IZKAFg9VgbBIl1skM0AV9QwQWA9FPnzniLDxpu66BX6ZNeyw-W23tdtF4ACK_MQYr8oYaN7OLhJHYXU_b1r4"
+                    />
+                    <div
+                      class="absolute top-4 left-4 bg-primary/80 backdrop-blur-md border border-white/10 px-3 py-1 rounded text-[10px] font-black tracking-widest text-neon-cyan uppercase font-display"
+                    >
+                      Financial Services
+                    </div>
+                  </div>
+                  <div class="p-8 flex-1 flex flex-col">
+                    <div class="mb-4">
+                      <span
+                        class="text-[10px] font-bold text-electric-blue uppercase tracking-widest"
+                        >Service: Data Entry &amp; Management</span
+                      >
+                      <h3
+                        class="text-2xl font-bold text-white mt-1 font-display"
+                      >
+                        Audit-Ready Financial Data Orchestration
+                      </h3>
+                    </div>
+                    <div class="space-y-4 mb-8 text-sm leading-relaxed">
+                      <div>
+                        <span
+                          class="block font-bold text-white/60 uppercase text-[10px] tracking-widest mb-1"
+                          >Client Challenge</span
+                        >
+                        <p class="text-slate-400">
+                          Fragmented transaction data across legacy systems
+                          leading to reconciliation errors and audit risks.
+                        </p>
+                      </div>
+                      <div>
+                        <span
+                          class="block font-bold text-white/60 uppercase text-[10px] tracking-widest mb-1"
+                          >Our Solution</span
+                        >
+                        <p class="text-slate-400">
+                          High-fidelity data entry pipeline with dual-layer
+                          verification and unified cloud-based management.
+                        </p>
+                      </div>
+                      <div
+                        class="p-4 bg-white/5 rounded-xl border border-white/10"
+                      >
+                        <span
+                          class="block font-bold text-neon-cyan uppercase text-[10px] tracking-widest mb-1"
+                          >Results</span
+                        >
+                        <p class="text-white font-semibold">
+                          100% clean, audit-ready data with zero reporting
+                          discrepancies over 12 months.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="mt-auto flex flex-wrap items-center gap-4">
+                      <button
+                        class="flex items-center gap-2 text-sm font-black text-electric-blue uppercase tracking-[0.2em] group/btn"
+                      >
+                        View Details
+                        <span
+                          class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform"
+                          >arrow_right_alt</span
+                        >
+                      </button>
+                      <button class="btn-pdf">
+                        <div class="shimmer"></div>
+                        <span
+                          class="material-symbols-outlined text-neon-cyan text-lg"
+                          >picture_as_pdf</span
+                        >
+                        <span
+                          class="text-[10px] font-bold text-white uppercase tracking-widest"
+                          >Download PDF</span
+                        >
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="glass-card rounded-[2rem] overflow-hidden group flex flex-col"
+                >
+                  <div class="relative h-64 overflow-hidden shrink-0">
+                    <img
+                      alt="Document Digitization"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzShG90jZRM9WNKL31--s_LIP268VQmr754aEfDvFleCbCxueW7hUnkxmp9TtvZWAeVExdAzoeNT-VmjWK0uK8HZxWOEKzGq6iSm2-dEKuAf-gcxTKliyhYSyAeBruzuFkuAFUrqXGcLLQF8wimNwz8vxiWsB8smI3Fb1uGq0and5Rv_KlQcwwsbDhwwgtco3F4161SJXyl3I7D1KcoF7wwedso7vDiCaytP01o0BoU7LhyqOJO9N4W2aMowt6xe17jU3zfwSw2jmn"
+                    />
+                    <div
+                      class="absolute top-4 left-4 bg-primary/80 backdrop-blur-md border border-white/10 px-3 py-1 rounded text-[10px] font-black tracking-widest text-neon-cyan uppercase font-display"
+                    >
+                      Education
+                    </div>
+                  </div>
+                  <div class="p-8 flex-1 flex flex-col">
+                    <div class="mb-4">
+                      <span
+                        class="text-[10px] font-bold text-electric-blue uppercase tracking-widest"
+                        >Service: Document Digitization</span
+                      >
+                      <h3
+                        class="text-2xl font-bold text-white mt-1 font-display"
+                      >
+                        Paperless Transformation for Higher Ed
+                      </h3>
+                    </div>
+                    <div class="space-y-4 mb-8 text-sm leading-relaxed">
+                      <div>
+                        <span
+                          class="block font-bold text-white/60 uppercase text-[10px] tracking-widest mb-1"
+                          >Client Challenge</span
+                        >
+                        <p class="text-slate-400">
+                          Decades of physical student records hindering
+                          administrative efficiency and data accessibility.
+                        </p>
+                      </div>
+                      <div>
+                        <span
+                          class="block font-bold text-white/60 uppercase text-[10px] tracking-widest mb-1"
+                          >Our Solution</span
+                        >
+                        <p class="text-slate-400">
+                          End-to-end OCR digitization with intelligent metadata
+                          indexing and secure archival storage.
+                        </p>
+                      </div>
+                      <div
+                        class="p-4 bg-white/5 rounded-xl border border-white/10"
+                      >
+                        <span
+                          class="block font-bold text-neon-cyan uppercase text-[10px] tracking-widest mb-1"
+                          >Results</span
+                        >
+                        <p class="text-white font-semibold">
+                          90% faster record retrieval and transition to fully
+                          paperless management.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="mt-auto flex flex-wrap items-center gap-4">
+                      <button
+                        class="flex items-center gap-2 text-sm font-black text-electric-blue uppercase tracking-[0.2em] group/btn"
+                      >
+                        View Details
+                        <span
+                          class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform"
+                          >arrow_right_alt</span
+                        >
+                      </button>
+                      <button class="btn-pdf">
+                        <div class="shimmer"></div>
+                        <span
+                          class="material-symbols-outlined text-neon-cyan text-lg"
+                          >picture_as_pdf</span
+                        >
+                        <span
+                          class="text-[10px] font-bold text-white uppercase tracking-widest"
+                          >Download PDF</span
+                        >
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="glass-card rounded-[2rem] overflow-hidden group flex flex-col"
+                >
+                  <div class="relative h-64 overflow-hidden shrink-0">
+                    <img
+                      alt="E-commerce Validation"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ0wMODdzZnGXaR-vkztDGgkoo0CIeziKIJ2mvvy6pnjzwHQ3qucSDOp6iRBHg8TT6O9y4C3qB6RuaXylvCCwrecPf3IzN6a6MQv5JCYqc_J7CgOcVmYGtQjXs23NkyDsDq0uW42vII9nKkSVYpg6h9ugbP3JLpYK41SBXopvwkunLzLeTBLS2tK0ylvaiLB90oI8Zj-IX-N7-P-uSFCbFuzBZes-nQWcNuJABwxoip_DzMxYw3M8H6kF36c6X4n1U8AJvwjmTUiiy"
+                    />
+                    <div
+                      class="absolute top-4 left-4 bg-primary/80 backdrop-blur-md border border-white/10 px-3 py-1 rounded text-[10px] font-black tracking-widest text-neon-cyan uppercase font-display"
+                    >
+                      E-commerce
+                    </div>
+                  </div>
+                  <div class="p-8 flex-1 flex flex-col">
+                    <div class="mb-4">
+                      <span
+                        class="text-[10px] font-bold text-electric-blue uppercase tracking-widest"
+                        >Service: Data Validation &amp; QC</span
+                      >
+                      <h3
+                        class="text-2xl font-bold text-white mt-1 font-display"
+                      >
+                        Precision Catalog Management
+                      </h3>
+                    </div>
+                    <div class="space-y-4 mb-8 text-sm leading-relaxed">
+                      <div>
+                        <span
+                          class="block font-bold text-white/60 uppercase text-[10px] tracking-widest mb-1"
+                          >Client Challenge</span
+                        >
+                        <p class="text-slate-400">
+                          Incorrect product listings and duplicate entries
+                          causing customer dissatisfaction and high return
+                          rates.
+                        </p>
+                      </div>
+                      <div>
+                        <span
+                          class="block font-bold text-white/60 uppercase text-[10px] tracking-widest mb-1"
+                          >Our Solution</span
+                        >
+                        <p class="text-slate-400">
+                          Multi-point quality check framework utilizing
+                          automated validation tools and human oversight.
+                        </p>
+                      </div>
+                      <div
+                        class="p-4 bg-white/5 rounded-xl border border-white/10"
+                      >
+                        <span
+                          class="block font-bold text-neon-cyan uppercase text-[10px] tracking-widest mb-1"
+                          >Results</span
+                        >
+                        <p class="text-white font-semibold">
+                          Error-free listings and 25% improvement in Customer
+                          Experience (CX) metrics.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="mt-auto flex flex-wrap items-center gap-4">
+                      <button
+                        class="flex items-center gap-2 text-sm font-black text-electric-blue uppercase tracking-[0.2em] group/btn"
+                      >
+                        View Details
+                        <span
+                          class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform"
+                          >arrow_right_alt</span
+                        >
+                      </button>
+                      <button class="btn-pdf">
+                        <div class="shimmer"></div>
+                        <span
+                          class="material-symbols-outlined text-neon-cyan text-lg"
+                          >picture_as_pdf</span
+                        >
+                        <span
+                          class="text-[10px] font-bold text-white uppercase tracking-widest"
+                          >Download PDF</span
+                        >
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="glass-card rounded-[2rem] overflow-hidden group flex flex-col md:col-span-2"
+                >
+                  <div class="flex flex-col md:flex-row h-full">
+                    <div
+                      class="relative w-full md:w-2/5 h-64 md:h-auto overflow-hidden shrink-0"
+                    >
+                      <img
+                        alt="Enterprise BPO"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAim4Op0LYxnzeECJ_BAV3CI5vqTAnx1BjyyJxP1C8usI--EQILXQKMCkU1OgVSuBslt8-0xkUlRdVu60JnkHkeOcSFE7eFA7zsplhHt-dRXft2cPUhVM-STh6CocFymEXz09ANfcc2uMamUX7zDcGzWxY_4z2Cc06dg5COedB87TnB7oCpaRwNmTcQODE2DG_b760ETc3V1fwOwypxEmq04JZPP61rzfXD5fsYpOKD6VJ5yARE-8tzI2e4c-n-8ibkiZCnHtobWIzc"
+                      />
+                      <div
+                        class="absolute top-4 left-4 bg-primary/80 backdrop-blur-md border border-white/10 px-3 py-1 rounded text-[10px] font-black tracking-widest text-neon-cyan uppercase font-display"
+                      >
+                        Growing Enterprise
+                      </div>
+                    </div>
+                    <div class="p-8 md:p-12 flex-1 flex flex-col">
+                      <div class="mb-6">
+                        <span
+                          class="text-[10px] font-bold text-electric-blue uppercase tracking-widest"
+                          >Service: IT &amp; BPO Support</span
+                        >
+                        <h3
+                          class="text-3xl font-bold text-white mt-1 font-display"
+                        >
+                          Scaling Operations for Global Growth
+                        </h3>
+                      </div>
+                      <div
+                        class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 text-sm leading-relaxed"
+                      >
+                        <div>
+                          <span
+                            class="block font-bold text-white/60 uppercase text-[10px] tracking-widest mb-2"
+                            >Client Challenge</span
+                          >
+                          <p class="text-slate-400">
+                            Rapidly scaling enterprise struggling with high
+                            overhead costs for internal back-office and IT
+                            support desk.
+                          </p>
+                        </div>
+                        <div>
+                          <span
+                            class="block font-bold text-white/60 uppercase text-[10px] tracking-widest mb-2"
+                            >Our Solution</span
+                          >
+                          <p class="text-slate-400">
+                            Managed IT support and integrated BPO services
+                            providing 24/7 technical and operational coverage.
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        class="p-6 bg-white/5 rounded-2xl border border-white/10 mb-8"
+                      >
+                        <span
+                          class="block font-bold text-neon-cyan uppercase text-[10px] tracking-widest mb-2"
+                          >Results</span
+                        >
+                        <p class="text-lg text-white font-bold">
+                          Successfully reduced operational costs by 45% while
+                          improving response times by 3x.
+                        </p>
+                      </div>
+                      <div class="mt-auto flex flex-wrap items-center gap-6">
+                        <button
+                          class="flex items-center gap-2 text-sm font-black text-electric-blue uppercase tracking-[0.2em] group/btn"
+                        >
+                          Explore Enterprise Solutions
+                          <span
+                            class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform"
+                            >arrow_right_alt</span
+                          >
+                        </button>
+                        <button class="btn-pdf">
+                          <div class="shimmer"></div>
+                          <span
+                            class="material-symbols-outlined text-neon-cyan text-lg"
+                            >picture_as_pdf</span
+                          >
+                          <span
+                            class="text-[10px] font-bold text-white uppercase tracking-widest"
+                            >Download PDF</span
+                          >
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <aside class="w-full lg:w-96 shrink-0">
+              <div class="sticky top-28 space-y-8">
+                <div class="glass-card p-8 rounded-[2rem] border-neon-cyan/20">
+                  <h4
+                    class="text-white font-bold mb-8 font-display flex items-center gap-3"
+                  >
+                    <span class="material-symbols-outlined text-neon-cyan"
+                      >verified_user</span
+                    >
+                    Why Choose DataBridge?
+                  </h4>
+                  <div class="space-y-8">
+                    <div class="flex gap-4">
+                      <div
+                        class="size-10 rounded-xl bg-electric-blue/10 flex items-center justify-center shrink-0"
+                      >
+                        <span
+                          class="material-symbols-outlined text-electric-blue text-xl"
+                          >high_quality</span
+                        >
+                      </div>
+                      <div>
+                        <h5 class="text-white font-bold text-sm mb-1">
+                          Unmatched Accuracy
+                        </h5>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                          Proprietary QC engines ensuring 99.9%+ data integrity
+                          across all conversions.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex gap-4">
+                      <div
+                        class="size-10 rounded-xl bg-electric-blue/10 flex items-center justify-center shrink-0"
+                      >
+                        <span
+                          class="material-symbols-outlined text-electric-blue text-xl"
+                          >speed</span
+                        >
+                      </div>
+                      <div>
+                        <h5 class="text-white font-bold text-sm mb-1">
+                          Rapid Turnaround
+                        </h5>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                          Agile BPO workflows designed for faster-to-market
+                          publishing and data cycles.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex gap-4">
+                      <div
+                        class="size-10 rounded-xl bg-electric-blue/10 flex items-center justify-center shrink-0"
+                      >
+                        <span
+                          class="material-symbols-outlined text-electric-blue text-xl"
+                          >payments</span
+                        >
+                      </div>
+                      <div>
+                        <h5 class="text-white font-bold text-sm mb-1">
+                          Cost Optimization
+                        </h5>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                          Proven models to reduce operational overhead by up to
+                          60%.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex gap-4">
+                      <div
+                        class="size-10 rounded-xl bg-electric-blue/10 flex items-center justify-center shrink-0"
+                      >
+                        <span
+                          class="material-symbols-outlined text-electric-blue text-xl"
+                          >shield_person</span
+                        >
+                      </div>
+                      <div>
+                        <h5 class="text-white font-bold text-sm mb-1">
+                          Security &amp; Compliance
+                        </h5>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                          Bank-grade encryption and strict adherence to global
+                          data privacy standards.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex gap-4">
+                      <div
+                        class="size-10 rounded-xl bg-electric-blue/10 flex items-center justify-center shrink-0"
+                      >
+                        <span
+                          class="material-symbols-outlined text-electric-blue text-xl"
+                          >hub</span
+                        >
+                      </div>
+                      <div>
+                        <h5 class="text-white font-bold text-sm mb-1">
+                          Scalable Infrastructure
+                        </h5>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                          Seamlessly integrate our expert teams into your
+                          existing tech stack.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="bg-gradient-to-br from-brand-blue to-electric-blue p-8 rounded-[2rem] shadow-xl shadow-brand-blue/20 group cursor-pointer overflow-hidden relative"
+                >
+                  <div
+                    class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"
+                  ></div>
+                  <h4 class="text-white text-xl font-black mb-4 font-display">
+                    Custom ROI Audit
+                  </h4>
+                  <p class="text-white/80 text-sm mb-6 leading-relaxed">
+                    Request a personalized analysis of your data lifecycle to
+                    discover potential efficiency gains.
+                  </p>
+                  <button
+                    class="w-full py-3 bg-white text-primary font-bold text-sm rounded-xl hover:bg-neon-cyan transition-all relative z-10"
+                  >
+                    Request Assessment
+                  </button>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+        <section class="py-32 relative overflow-hidden bg-background-dark">
+          <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-electric-blue/5 blur-[120px] rounded-full pointer-events-none"
+          ></div>
+          <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+              <h2
+                class="text-3xl md:text-5xl font-black text-white font-display mb-4"
+              >
+                Client <span class="text-neon-cyan">Success</span> Stories.
+              </h2>
+              <p class="text-slate-400 font-medium">
+                Voices of impact from our global partners and enterprise
+                clients.
+              </p>
+            </div>
+            <div class="max-w-5xl mx-auto relative px-4 sm:px-12 md:px-20">
+              <button
+                class="absolute left-0 top-1/2 -translate-y-1/2 size-12 rounded-full glass-card flex items-center justify-center text-white hover:text-neon-cyan hover:border-neon-cyan/50 transition-all z-20 group"
+              >
+                <span class="material-symbols-outlined">chevron_left</span>
+              </button>
+              <button
+                class="absolute right-0 top-1/2 -translate-y-1/2 size-12 rounded-full glass-card flex items-center justify-center text-white hover:text-neon-cyan hover:border-neon-cyan/50 transition-all z-20 group"
+              >
+                <span class="material-symbols-outlined">chevron_right</span>
+              </button>
+              <div
+                class="glass-card testimonial-glow p-8 md:p-16 rounded-[3rem] relative overflow-hidden group/card transition-all duration-500"
+              >
+                <div class="absolute top-0 right-0 p-8 opacity-10">
+                  <span
+                    class="material-symbols-outlined text-8xl text-neon-cyan select-none"
+                    >format_quote</span
+                  >
+                </div>
+                <div class="flex flex-col items-center text-center">
+                  <div class="mb-10 flex items-center justify-center">
+                    <div
+                      class="h-10 px-6 py-2 bg-white/5 rounded-full border border-white/10 flex items-center justify-center"
+                    >
+                      <img
+                        alt="Enterprise Client"
+                        class="h-5 opacity-80 brightness-0 invert"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK5d2nzuJv1caH97tLDOzO4Ek1ej1Y8gTP2mJBNw_k0HyqK3TURTTE5ecVDS43LMdXyrL27JxUgAWGA81RHMLKUpv0vRjaU3ZEg4wdPdSUdIgC9-wN2sRkVBx1BnGx1wwYTymDKf6ej96C8zureeD1apoX8S41Tyzf7J1N-5MCZ9UMmfmbMXO8r131MIBFcjm0t_OG_TjucIkggrbC6qOIZP9SZlZ_EE3o_juQlfs_lvl-EjtcsxprIc6Jt4lGYuqQOBmPKm4pPm4x"
+                      />
+                    </div>
+                  </div>
+                  <blockquote
+                    class="text-xl md:text-3xl font-medium text-white mb-12 italic leading-relaxed font-display"
+                  >
+                    "The neural architecture DataBridge implemented for our
+                    archival systems wasn't just an upgrade—it was a complete
+                    paradigm shift in how we handle information integrity."
+                  </blockquote>
+                  <div class="flex flex-col items-center">
+                    <div
+                      class="size-16 rounded-full border-2 border-neon-cyan/30 p-1 mb-4"
+                    >
+                      <img
+                        alt="Marcus Thorne"
+                        class="w-full h-full rounded-full bg-slate-800"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAim4Op0LYxnzeECJ_BAV3CI5vqTAnx1BjyyJxP1C8usI--EQILXQKMCkU1OgVSuBslt8-0xkUlRdVu60JnkHkeOcSFE7eFA7zsplhHt-dRXft2cPUhVM-STh6CocFymEXz09ANfcc2uMamUX7zDcGzWxY_4z2Cc06dg5COedB87TnB7oCpaRwNmTcQODE2DG_b760ETc3V1fwOwypxEmq04JZPP61rzfXD5fsYpOKD6VJ5yARE-8tzI2e4c-n-8ibkiZCnHtobWIzc"
+                      />
+                    </div>
+                    <h4 class="text-lg font-bold text-white tracking-tight">
+                      Marcus Thorne
+                    </h4>
+                    <p
+                      class="text-sm font-bold text-neon-cyan/80 uppercase tracking-[0.2em] mt-1"
+                    >
+                      Chief Information Officer, Global Dynamics
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="flex justify-center gap-3 mt-12">
+                <button
+                  class="size-2 rounded-full bg-neon-cyan shadow-[0_0_10px_rgba(0,240,255,0.6)] transition-all"
+                ></button>
+                <button
+                  class="size-2 rounded-full bg-white/10 hover:bg-white/20 transition-all"
+                ></button>
+                <button
+                  class="size-2 rounded-full bg-white/10 hover:bg-white/20 transition-all"
+                ></button>
+                <button
+                  class="size-2 rounded-full bg-white/10 hover:bg-white/20 transition-all"
+                ></button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="py-24 container mx-auto px-6">
+          <div
+            class="glass-card p-12 md:p-20 rounded-[3rem] text-center relative overflow-hidden"
+          >
+            <div
+              class="absolute -top-24 -left-24 size-64 bg-neon-cyan/10 rounded-full blur-[100px]"
+            ></div>
+            <div
+              class="absolute -bottom-24 -right-24 size-64 bg-brand-blue/10 rounded-full blur-[100px]"
+            ></div>
+            <div class="relative z-10">
+              <h2
+                class="text-4xl md:text-5xl font-black text-white mb-8 font-display"
+              >
+                Looking for a reliable data partner?
+              </h2>
+              <p class="text-slate-400 max-w-2xl mx-auto mb-12 text-lg">
+                Join the hundreds of enterprises that rely on DataBridge for
+                precision-engineered data and operational support solutions.
+              </p>
+              <div
+                class="flex flex-col sm:flex-row items-center justify-center gap-6"
+              >
+                <button
+                  class="w-full sm:w-auto px-12 py-5 bg-brand-blue text-white font-extrabold text-lg rounded-xl hover:bg-electric-blue hover:scale-105 transition-all shadow-2xl flex items-center justify-center gap-3"
+                >
+                  Get a Quote
+                  <span class="material-symbols-outlined">payments</span>
+                </button>
+                <button
+                  class="w-full sm:w-auto px-12 py-5 bg-slate-800/50 backdrop-blur-md border border-white/10 text-white font-extrabold text-lg rounded-xl hover:bg-slate-800 transition-all flex items-center justify-center gap-3"
+                >
+                  Contact Us
+                  <span class="material-symbols-outlined">mail</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="bg-background-dark pt-32 pb-16 border-t border-white/5">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-16 mb-24"
+          >
+            <div class="lg:col-span-2 space-y-8">
+              <div class="flex items-center gap-4">
+                <svg
+                  class="size-10 text-brand-blue"
+                  fill="none"
+                  viewBox="0 0 44 44"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 10C12 10 22 10 22 22C22 34 12 34 12 34"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-width="3.5"
+                  ></path>
+                  <path
+                    class="opacity-80"
+                    d="M22 10C22 10 32 10 32 22C32 34 22 34 22 34"
+                    stroke="#2E7CFF"
+                    stroke-linecap="round"
+                    stroke-width="3.5"
+                  ></path>
+                </svg>
+                <div class="flex flex-col">
+                  <h2
+                    class="text-white text-xl font-extrabold tracking-tight leading-none font-display"
+                  >
+                    DataBridge
+                  </h2>
+                  <span
+                    class="text-[10px] font-bold text-electric-blue tracking-[0.4em] uppercase leading-none mt-1.5"
+                    >Solutions</span
+                  >
+                </div>
+              </div>
+              <p class="text-slate-400 max-w-sm leading-relaxed">
+                Redefining the standards of data integrity and business process
+                outsourcing through advanced technological infrastructure.
+              </p>
+              <div class="flex items-center gap-5">
+                <a
+                  class="size-10 rounded-lg bg-white/5 flex items-center justify-center text-slate-400 hover:text-neon-cyan hover:bg-white/10 transition-all border border-white/5"
+                  href="#"
+                >
+                  <svg class="size-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                    ></path>
+                  </svg>
+                </a>
+                <a
+                  class="size-10 rounded-lg bg-white/5 flex items-center justify-center text-slate-400 hover:text-neon-cyan hover:bg-white/10 transition-all border border-white/5"
+                  href="#"
+                >
+                  <svg class="size-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.292 19.494h2.039L6.482 3.239h-2.19l13.317 17.408z"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="space-y-8">
+              <h4
+                class="text-sm font-black uppercase tracking-[0.3em] text-white font-display"
+              >
+                Infrastructure
+              </h4>
+              <ul class="space-y-4">
+                <li>
+                  <a
+                    class="text-slate-400 hover:text-neon-cyan transition-colors"
+                    href="#"
+                    >XML Conversion</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-slate-400 hover:text-neon-cyan transition-colors"
+                    href="#"
+                    >Digital Archiving</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-slate-400 hover:text-neon-cyan transition-colors"
+                    href="#"
+                    >Data Orchestration</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-slate-400 hover:text-neon-cyan transition-colors"
+                    href="#"
+                    >Security Specs</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-8">
+              <h4
+                class="text-sm font-black uppercase tracking-[0.3em] text-white font-display"
+              >
+                Ecosystem
+              </h4>
+              <ul class="space-y-4">
+                <li>
+                  <a
+                    class="text-slate-400 hover:text-neon-cyan transition-colors"
+                    href="#"
+                    >Case Studies</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-slate-400 hover:text-neon-cyan transition-colors"
+                    href="#"
+                    >Technical Blog</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-slate-400 hover:text-neon-cyan transition-colors"
+                    href="#"
+                    >Network Status</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-slate-400 hover:text-neon-cyan transition-colors"
+                    href="#"
+                    >Open API</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-8">
+              <h4
+                class="text-sm font-black uppercase tracking-[0.3em] text-white font-display"
+              >
+                Terminal
+              </h4>
+              <ul class="space-y-5">
+                <li class="flex gap-4 items-center">
+                  <span
+                    class="material-symbols-outlined text-electric-blue text-xl"
+                    >satellite_alt</span
+                  >
+                  <span class="text-slate-400 text-sm"
+                    >Global HQ: San Francisco, CA</span
+                  >
+                </li>
+                <li class="flex gap-4 items-center">
+                  <span
+                    class="material-symbols-outlined text-electric-blue text-xl"
+                    >encrypted</span
+                  >
+                  <span class="text-slate-400 text-sm"
+                    >status.databridge.com</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8"
+          >
+            <p class="text-sm text-slate-500 font-medium">
+              © 2024 DataBridge Solutions. All data systems nominal.
+              <span class="text-neon-cyan">v4.0.2</span>
+            </p>
+            <div class="flex items-center gap-10">
+              <a
+                class="text-xs text-slate-500 hover:text-white transition-colors uppercase tracking-widest font-bold"
+                href="#"
+                >Privacy Protocol</a
+              >
+              <a
+                class="text-xs text-slate-500 hover:text-white transition-colors uppercase tracking-widest font-bold"
+                href="#"
+                >End User Terms</a
+              >
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
