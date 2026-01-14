@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Profile | DataBridge Careers</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#f6f7f8] min-h-screen">
+
+  <header
+  class="sticky top-0 z-50 w-full bg-white/90 dark:bg-background-dark/90
+         backdrop-blur-md border-b border-[#f0f2f4] dark:border-gray-800"
+>
+  <div
+    class="max-w-[1280px] mx-auto px-6 md:px-10 py-4
+           flex items-center justify-between"
+  >
+
+    <!-- ✅ NEW LOGO -->
+    <a href="./home.html" class="flex items-center gap-4 group shrink-0">
+      <div class="relative flex items-center justify-center size-11">
+        <svg
+          class="w-full h-full text-primary transition-transform duration-500 group-hover:scale-110"
+          fill="none"
+          viewBox="0 0 44 44"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 10C12 10 22 10 22 22C22 34 12 34 12 34"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-width="3.5"
+          />
+          <path
+            d="M22 10C22 10 32 10 32 22C32 34 22 34 22 34"
+            stroke="url(#logo-grad)"
+            stroke-linecap="round"
+            stroke-width="3.5"
+            opacity="0.85"
+          />
+          <circle cx="12" cy="10" r="2.5" fill="currentColor" />
+          <circle cx="32" cy="22" r="2.5" fill="url(#logo-grad)" />
+          <circle cx="12" cy="34" r="2.5" fill="currentColor" />
+
+          <defs>
+            <linearGradient
+              id="logo-grad"
+              x1="22"
+              y1="10"
+              x2="32"
+              y2="34"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#2E7CFF" />
+              <stop offset="1" stop-color="#00F0FF" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <div class="flex flex-col leading-none">
+        <span class="text-[#111418] dark:text-white text-xl font-extrabold">
+          DataBridge
+        </span>
+        <span
+          class="text-[10px] font-bold text-primary tracking-[0.35em] uppercase mt-1"
+        >
+         DataBridge Solutions
+        </span>
+      </div>
+    </a>
+
+    <!-- NAV -->
+    <nav class="hidden lg:flex items-center gap-8">
+      <a class="text-sm font-medium hover:text-primary" href="./home.html">Home</a>
+      <a class="text-sm font-medium hover:text-primary" href="./aboutUs.html">About</a>
+      <a class="text-sm font-medium hover:text-primary" href="./services.html">Services</a>
+      <a class="text-sm font-medium hover:text-primary" href="./industries.html">Industries</a>
+      <a class="text-sm font-medium hover:text-primary" href="./careers.html">Careers</a>
+      <a class="text-sm font-medium hover:text-primary" href="./contactus.html">Contact</a>
+    </nav>
+
+    <!-- RIGHT ACTIONS -->
+    <div class="flex items-center gap-3 relative">
+
+      <!-- Dark Mode -->
+      <button
+        onclick="toggleDarkMode()"
+        class="border border-gray-300 dark:border-gray-600
+               px-3 py-2 rounded text-sm"
+        title="Toggle Dark Mode"
+      >
+        🌙
+      </button>
+
+      <!-- USER MENU -->
+      <div class="relative">
+        <button
+          id="userBtn"
+          class="flex items-center gap-2
+                 border border-gray-300 dark:border-gray-600
+                 rounded-full px-3 py-2
+                 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+        >
+          <!-- User Icon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z"
+            />
+          </svg>
+          <span id="userName" class="text-sm font-medium hidden md:block">
+            Account
+          </span>
+        </button>
+
+        <!-- DROPDOWN -->
+        <div
+          id="userMenu"
+          class="hidden absolute right-0 mt-2 w-40
+                 bg-white dark:bg-[#111418]
+                 border border-gray-200 dark:border-gray-700
+                 rounded-lg shadow-lg overflow-hidden"
+        >
+          <a
+            href="./profile.html"
+            class="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-800"
+          >
+            My Profile
+          </a>
+          <button
+            onclick="logoutUser()"
+            class="w-full text-left px-4 py-2 text-sm
+                   hover:bg-red-50 text-red-600"
+          >
+            Logout
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+
+
+  <!-- MAIN -->
+  <main class="max-w-5xl mx-auto px-6 py-10">
+
+    <!-- PROFILE CARD -->
+    <section class="bg-white rounded-2xl shadow p-6 flex items-center gap-6">
+      <div
+        class="w-20 h-20 rounded-full bg-primary text-white
+               flex items-center justify-center text-2xl font-bold"
+        id="avatar"
+      >
+        U
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold" id="profileName"></h2>
+        <p class="text-gray-500" id="profileEmail"></p>
+      </div>
+    </section>
+
+    <!-- APPLICATIONS -->
+    <section class="mt-10">
+      <h3 class="text-xl font-bold mb-4">My Applications</h3>
+
+      <div class="bg-white rounded-xl shadow divide-y" id="applicationsList">
+        
+      </div>
+    </section>
+
+    <!-- LOGOUT -->
+    <section class="mt-10">
+      <button
+        onclick="logoutUser()"
+        class="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700"
+      >
+        Logout
+      </button>
+    </section>
+
+  </main>
+
+  <!-- SCRIPT -->
+  <script>
+  const applicationsList = document.getElementById("applicationsList");
+
+  const appliedJobs =
+    JSON.parse(localStorage.getItem("appliedJobs")) || [];
+
+  if (appliedJobs.length === 0) {
+    applicationsList.innerHTML = `
+      <div class="p-4 text-gray-500 text-sm">
+        You haven’t applied to any jobs yet.
+      </div>
+    `;
+  } else {
+    applicationsList.innerHTML = "";
+    appliedJobs.forEach(job => {
+      applicationsList.innerHTML += `
+        <div class="p-4 flex justify-between items-center">
+          <span>${job}</span>
+          <span class="text-green-600 font-medium">Applied</span>
+        </div>
+      `;
+    });
+  }
+
+    // 👤 Load user info from login
+  const name = localStorage.getItem("userName");
+  const email = localStorage.getItem("userEmail");
+
+  const nameEl = document.getElementById("profileName");
+  const emailEl = document.getElementById("profileEmail");
+
+  // Safety check (no fake defaults)
+  if (name && email) {
+    nameEl.textContent = name;
+    emailEl.textContent = email;
+  } else {
+    // Edge case: corrupted storage → force login
+    localStorage.setItem("isLoggedIn", "false");
+    window.location.href = "login.html";
+  }
+</script>
+
+
+</body>
+</html>
