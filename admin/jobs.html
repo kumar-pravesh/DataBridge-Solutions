@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Manage Jobs | Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+  <!-- HEADER -->
+  <header class="bg-white border-b shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <div class="text-primary font-extrabold text-xl">DataBridge</div>
+        <span class="text-xs uppercase tracking-widest text-gray-400">Admin</span>
+      </div>
+
+      <nav class="flex items-center gap-6 text-sm font-medium">
+        <a href="dashboard.html" class="hover:text-primary">Dashboard</a>
+        <a href="jobs.html" class="text-primary">Jobs</a>
+        <a href="applications.html" class="hover:text-primary">Applications</a>
+        <a href="contacts.html" class="hover:text-primary">Contacts</a>
+        <button onclick="adminLogout()" class="ml-4 text-red-600 font-semibold">
+          Logout
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="flex-1 max-w-7xl mx-auto px-6 py-10">
+
+    <h1 class="text-2xl font-bold mb-6">Manage Jobs</h1>
+
+    <!-- ADD / EDIT FORM -->
+   <form
+  id="jobForm"
+  class="bg-white p-6 rounded-xl shadow mb-10
+         grid grid-cols-1 md:grid-cols-2 gap-4"
+>
+  <input type="hidden" id="jobId" />
+
+  <input id="title" placeholder="Job Title" class="h-11 px-4 border rounded" required />
+  <input id="dept" placeholder="Department" class="h-11 px-4 border rounded" required />
+  <input id="exp" placeholder="Experience (Entry / Experienced)" class="h-11 px-4 border rounded" required />
+  <input id="loc" placeholder="Location" class="h-11 px-4 border rounded" required />
+
+  <input
+    id="skills"
+    placeholder="Skills"
+    class="h-11 px-4 border rounded md:col-span-2"
+    required
+  />
+
+  <textarea
+    id="description"
+    placeholder="Job Description"
+    class="p-4 border rounded md:col-span-2"
+    required
+  ></textarea>
+
+  <!-- ✅ BUTTON MUST SPAN BOTH COLUMNS -->
+  <div class="md:col-span-2 flex justify-center pt-4">
+    <button
+      type="submit"
+      class="h-12 px-10 min-w-[200px]
+             bg-blue-600 text-white
+             font-bold rounded-lg
+             hover:bg-blue-700 transition"
+    >
+      Save Job
+    </button>
+  </div>
+</form>
+
+
+    <!-- JOB LIST -->
+    <div id="jobList" class="space-y-4"></div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t">
+    <div class="max-w-7xl mx-auto px-6 py-4 text-sm text-gray-500 text-center">
+      © 2026 DataBridge Solutions — Admin Panel
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  
+  <script>
+    let jobs = JSON.parse(localStorage.getItem("jobs")) || [];
+
+    const jobList = document.getElementById("jobList");
+    const form = document.getElementById("jobForm");
+
+    function renderJobs() {
+      jobList.innerHTML = "";
+
+      if (jobs.length === 0) {
+        jobList.innerHTML = `
+          <div class="text-gray-500 bg-white p-6 rounded-xl shadow">
+            No jobs posted yet.
+          </div>
+        `;
+        return;
+      }
+
+      jobs.forEach(job => {
+        jobList.innerHTML += `
+          <div class="bg-white p-6 rounded-xl shadow flex justify-between items-start">
+            <div>
+              <h3 class="font-bold text-lg">${job.title}</h3>
+              <p class="text-sm text-gray-500">
+                ${job.dept} • ${job.exp} • ${job.loc}
+              </p>
+            </div>
+            <div class="flex gap-4">
+              <button
+                onclick="editJob('${job.id}')"
+                class="text-blue-600 font-semibold"
+              >
+                Edit
+              </button>
+              <button
+                onclick="deleteJob('${job.id}')"
+                class="text-red-600 font-semibold"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+
+      const id = document.getElementById("jobId").value || "job_" + Date.now();
+
+      const job = {
+        id,
+        title: title.value,
+        dept: dept.value,
+        exp: exp.value,
+        loc: loc.value,
+        skills: skills.value,
+        description: description.value
+      };
+
+      const index = jobs.findIndex(j => j.id === id);
+
+      if (index >= 0) {
+        jobs[index] = job;
+      } else {
+        jobs.push(job);
+      }
+
+      localStorage.setItem("jobs", JSON.stringify(jobs));
+      form.reset();
+      document.getElementById("jobId").value = "";
+      renderJobs();
+    });
+
+    function editJob(id) {
+      const job = jobs.find(j => j.id === id);
+      if (!job) return;
+
+      jobId.value = job.id;
+      title.value = job.title;
+      dept.value = job.dept;
+      exp.value = job.exp;
+      loc.value = job.loc;
+      skills.value = job.skills;
+      description.value = job.description;
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function deleteJob(id) {
+      if (!confirm("Delete this job?")) return;
+      jobs = jobs.filter(j => j.id !== id);
+      localStorage.setItem("jobs", JSON.stringify(jobs));
+      renderJobs();
+    }
+
+    renderJobs();
+  </script>
+
+</body>
+</html>
