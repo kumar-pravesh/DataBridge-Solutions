@@ -555,32 +555,32 @@ const grid = document.getElementById("jobGrid");
 /* =========================================================
    JOB DATA
    ========================================================= */
-const jobs = [
+const DEFAULT_JOBS = [
   {
+    id: "job_1",
     title: "Data Processing Executive",
     dept: "Engineering",
     exp: "Entry",
     loc: "India",
     skills: "Excel, Validation",
-    description: "Responsible for processing and validating data with high accuracy. To ensure data integrity and quality in various projects."
+    description: "Responsible for processing and validating data."
   },
   {
+    id: "job_2",
     title: "Sales Manager",
     dept: "Sales",
     exp: "Experienced",
     loc: "USA",
     skills: "CRM, Negotiation",
-    description: "Lead sales teams to achieve targets and manage client relationships. To drive revenue growth through strategic sales initiatives."
-  },
-  {
-    title: "Junior XML Developer",
-    dept: "Engineering",
-    exp: "Entry",
-    loc: "India",
-    skills: "XML, XSLT",
-    description: "Develop and maintain XML-based applications and transformations. To support data conversion and integration projects.",
+    description: "Lead sales teams and manage clients."
   }
 ];
+let jobs = JSON.parse(localStorage.getItem("jobs"));
+
+if (!jobs || jobs.length === 0) {
+  localStorage.setItem("jobs", JSON.stringify(DEFAULT_JOBS));
+  jobs = DEFAULT_JOBS;
+}
 
 /* =========================================================
    RENDER JOB CARDS
