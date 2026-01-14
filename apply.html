@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apply | DataBridge Careers</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: { primary: "#136dec" }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body
+  class="font-display min-h-screen flex items-center justify-center
+         bg-cover bg-center bg-no-repeat relative px-4"
+  style="
+    background-image:
+      linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.75)),
+      url('./assets/images/LOGIN.jpeg');
+  "
+>
+
+  <!-- APPLICATION CARD -->
+  <section
+    id="applySection"
+    class="w-full max-w-[640px]
+           bg-white/90
+           backdrop-blur-xl
+           p-8 sm:p-10
+           rounded-2xl
+           shadow-2xl
+           border border-white/20
+           animate-fade-in"
+  >
+
+    <!-- HEADER -->
+    <h3 class="text-3xl font-bold mb-2 text-center text-gray-900">
+      Job <span class="text-primary">Application</span>
+    </h3>
+    <p class="text-sm text-center text-gray-500 mb-8">
+      Fill in your details to apply for this position
+    </p>
+
+    <!-- FORM -->
+    <form class="flex flex-col gap-5" onsubmit="handleFormApply(event)">
+
+      <!-- FULL NAME -->
+      <div>
+        <label class="text-sm font-medium mb-1 block text-gray-700">
+          Full Name
+        </label>
+        <input
+          class="h-11 w-full px-4 rounded-lg border border-gray-300
+                 focus:outline-none focus:ring-2 focus:ring-primary/60 transition"
+          placeholder="John Doe"
+          required
+        />
+      </div>
+
+      <!-- EMAIL -->
+      <div>
+        <label class="text-sm font-medium mb-1 block text-gray-700">
+          Email Address
+        </label>
+        <input
+          type="email"
+          class="h-11 w-full px-4 rounded-lg border border-gray-300
+                 focus:outline-none focus:ring-2 focus:ring-primary/60 transition"
+          placeholder="you@example.com"
+          required
+        />
+      </div>
+
+      <!-- PHONE -->
+      <div>
+        <label class="text-sm font-medium mb-1 block text-gray-700">
+          Phone Number
+        </label>
+        <input
+          class="h-11 w-full px-4 rounded-lg border border-gray-300
+                 focus:outline-none focus:ring-2 focus:ring-primary/60 transition"
+          placeholder="+91 98765 43210"
+          required
+        />
+      </div>
+
+      <!-- POSITION -->
+      <div>
+        <label class="text-sm font-medium mb-1 block text-gray-700">
+          Position Applying For
+        </label>
+        <select
+          id="positionSelect"
+          class="h-11 w-full px-4 rounded-lg border border-gray-300
+                 bg-white
+                 focus:outline-none focus:ring-2 focus:ring-primary/60 transition"
+          required
+        >
+          <option value="">Select Position</option>
+        </select>
+      </div>
+
+      <!-- RESUME -->
+      <div>
+        <label class="text-sm font-medium mb-1 block text-gray-700">
+          Upload Resume
+        </label>
+        <input
+          type="file"
+          required
+          class="block w-full text-sm text-gray-600
+                 file:mr-4 file:py-2 file:px-4
+                 file:rounded-lg file:border-0
+                 file:bg-primary file:text-white
+                 hover:file:bg-primary/90 transition"
+        />
+      </div>
+
+      <!-- SUBMIT -->
+      <button
+        type="submit"
+        class="h-12 mt-2
+               bg-primary
+               text-white
+               font-bold
+               rounded-lg
+               tracking-wide
+               hover:bg-primary/90
+               active:scale-[0.98]
+               transition-all duration-200"
+      >
+        Submit Application
+      </button>
+
+    </form>
+  </section>
+
+  <!-- SCRIPT (UNCHANGED) -->
+  <script>
+  const positionSelect = document.getElementById("positionSelect");
+
+  const jobs = [
+    "Data Processing Executive",
+    "Sales Manager",
+    "Junior XML Developer",
+    "Senior Sales Executive",
+    "XML Executive",
+    "Quality Analyst"
+  ];
+
+  function populatePositions() {
+    positionSelect.innerHTML = '<option value="">Select Position</option>';
+    jobs.forEach(j => {
+      positionSelect.innerHTML += `<option value="${j}">${j}</option>`;
+    });
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    // 1️⃣ Block page if not logged in
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    if (!isLoggedIn) {
+      localStorage.setItem("loginIntent", "apply");
+      window.location.href = "login.html";
+      return;
+    }
+
+    // 2️⃣ Populate positions
+    populatePositions();
+
+    // 3️⃣ Auto-select job if coming from Apply button
+    const selectedJob = localStorage.getItem("selectedJob");
+    if (selectedJob) {
+      positionSelect.value = selectedJob;
+      localStorage.removeItem("selectedJob");
+    }
+  });
+
+ function handleFormApply(e) {
+  e.preventDefault();
+
+  const selectedJob = document.getElementById("positionSelect").value;
+
+  // Get existing applied jobs
+  const appliedJobs =
+    JSON.parse(localStorage.getItem("appliedJobs")) || [];
+
+  // Avoid duplicates
+  if (!appliedJobs.includes(selectedJob)) {
+    appliedJobs.push(selectedJob);
+    localStorage.setItem("appliedJobs", JSON.stringify(appliedJobs));
+  }
+
+  // Toast message
+  localStorage.setItem("toastMsg", "Applied successfully");
+
+  // Redirect
+  window.location.href = "careers.html";
+}
+
+</script>
+
+
+  <!-- FADE ANIMATION -->
+  <style>
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+      animation: fade-in 0.6s ease-out;
+    }
+  </style>
+
+</body>
+
+</html>
