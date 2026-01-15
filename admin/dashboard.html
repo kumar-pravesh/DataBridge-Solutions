@@ -1,82 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Admin Dashboard | DataBridge</title>
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
+  <title>DataBridge Admin Job & Applicant Manager</title>
 
-<body class="bg-gray-100 min-h-screen flex flex-col">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
-  <!-- HEADER -->
-  <header class="bg-white border-b shadow-sm">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="flex items-center gap-3">
-        <div class="text-primary font-extrabold text-xl">DataBridge</div>
-        <span class="text-xs uppercase tracking-widest text-gray-400">Admin</span>
-      </div>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
 
-      <nav class="flex items-center gap-6 text-sm font-medium">
-        <a href="dashboard.html" class="text-primary">Dashboard</a>
-        <a href="jobs.html" class="hover:text-primary">Jobs</a>
-        <a href="applications.html" class="hover:text-primary">Applications</a>
-        <a href="contacts.html" class="hover:text-primary">Contacts</a>
-        <button onclick="adminLogout()" class="ml-4 text-red-600 font-semibold">
-          Logout
-        </button>
-      </nav>
-    </div>
-  </header>
-
-  <!-- MAIN -->
-  <main class="flex-1 max-w-7xl mx-auto px-6 py-10">
-
-    <h1 class="text-2xl font-bold mb-8">Dashboard</h1>
-
-    <!-- STATS -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      <!-- JOBS -->
-      <div class="bg-white p-6 rounded-xl shadow">
-        <h3 class="text-sm text-gray-500">Total Jobs</h3>
-        <p class="text-3xl font-bold mt-2" id="jobCount">0</p>
-      </div>
-
-      <!-- APPLICATIONS -->
-      <div class="bg-white p-6 rounded-xl shadow">
-        <h3 class="text-sm text-gray-500">Applications</h3>
-        <p class="text-3xl font-bold mt-2" id="applicationCount">0</p>
-      </div>
-
-      <!-- CONTACT QUERIES -->
-      <div class="bg-white p-6 rounded-xl shadow">
-        <h3 class="text-sm text-gray-500">Contact Queries</h3>
-        <p class="text-3xl font-bold mt-2" id="contactCount">0</p>
-      </div>
-
-    </div>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="border-t">
-    <div class="max-w-7xl mx-auto px-6 py-4 text-sm text-gray-500 text-center">
-      © 2026 DataBridge Solutions — Admin Panel
-    </div>
-  </footer>
-
-  <!-- SCRIPTS -->
-  <script src="admin.js"></script>
   <script>
-    // Dashboard stats
-    const jobs = JSON.parse(localStorage.getItem("jobs")) || [];
-    const applications = JSON.parse(localStorage.getItem("applications")) || [];
-    const contacts = JSON.parse(localStorage.getItem("contactQueries")) || [];
-
-    document.getElementById("jobCount").textContent = jobs.length;
-    document.getElementById("applicationCount").textContent = applications.length;
-    document.getElementById("contactCount").textContent = contacts.length;
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#136dec",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101822",
+          },
+          fontFamily: {
+            display: ["Inter", "sans-serif"],
+          },
+        },
+      },
+    };
   </script>
 
+  <style type="text/tailwindcss">
+    .glass-card {
+      background: rgba(26, 31, 39, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .sidebar-active {
+      background-color: rgba(19, 109, 236, 0.15);
+      border-left: 3px solid #136dec;
+    }
+  </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-100 antialiased h-screen overflow-hidden">
+  <div class="flex h-full w-full">
+
+    <!-- SIDEBAR -->
+    <aside class="w-72 bg-[#111418] border-r border-[#282f39] flex flex-col justify-between py-6">
+
+      <div class="flex flex-col gap-8">
+
+        <!-- LOGO -->
+        <a href="../home.html" class="px-6 flex items-center gap-4">
+          <div class="size-10">
+            <svg class="w-full h-full text-primary" fill="none" viewBox="0 0 44 44">
+              <path d="M12 10C12 10 22 10 22 22C22 34 12 34 12 34" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+              <path d="M22 10C22 10 32 10 32 22C32 34 22 34 22 34" stroke="url(#g)" stroke-width="3.5" stroke-linecap="round"/>
+              <circle cx="12" cy="10" r="2.5" fill="currentColor"/>
+              <circle cx="12" cy="34" r="2.5" fill="currentColor"/>
+              <circle cx="32" cy="22" r="2.5" fill="url(#g)"/>
+              <defs>
+                <linearGradient id="g" x1="22" y1="10" x2="32" y2="34">
+                  <stop stop-color="#2E7CFF"/>
+                  <stop offset="1" stop-color="#00F0FF"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div>
+            <h1 class="text-white text-lg font-bold leading-none">DataBridge</h1>
+            <p class="text-[#9da8b9] text-xs mt-1">Hiring Admin</p>
+          </div>
+        </a>
+
+        <!-- NAV -->
+        <nav class="flex flex-col gap-1">
+
+          <a
+            href="dashboard.html"
+            class="flex items-center gap-3 px-6 py-3 text-white sidebar-active"
+          >
+            <span class="material-symbols-outlined">dashboard</span>
+            <span class="text-sm font-medium">Dashboard</span>
+          </a>
+
+          <a
+            href="jobs.html"
+            class="flex items-center gap-3 px-6 py-3 text-[#9da8b9] hover:text-white hover:bg-[#282f39] transition-colors"
+          >
+            <span class="material-symbols-outlined">work</span>
+            <span class="text-sm font-medium">Job Management</span>
+          </a>
+
+          <a
+            href="applications.html"
+            class="flex items-center gap-3 px-6 py-3 text-[#9da8b9] hover:text-white hover:bg-[#282f39] transition-colors"
+          >
+            <span class="material-symbols-outlined">group</span>
+            <span class="text-sm font-medium">Job Applicants</span>
+          </a>
+
+        </nav>
+      </div>
+
+      <!-- BOTTOM -->
+      <div class="flex flex-col gap-1 border-t border-[#282f39] pt-6">
+        <a
+  href="profile.html"
+  class="flex items-center gap-3 px-6 py-3 text-[#9da8b9] hover:text-white hover:bg-[#282f39]"
+>
+  <span class="material-symbols-outlined">person</span>
+  <span class="text-sm font-medium">Profile</span>
+</a>
+
+
+        <button
+          onclick="adminLogout()"
+          class="flex items-center gap-3 px-6 py-3 text-red-400 hover:bg-red-950/20 transition-colors text-left"
+        >
+          <span class="material-symbols-outlined">logout</span>
+          <span class="text-sm font-medium">Logout</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="flex-1 flex flex-col overflow-y-auto">
+
+      <!-- HEADER -->
+      <header class="flex items-center justify-between border-b border-[#282f39] px-8 py-4 bg-background-dark/80 backdrop-blur sticky top-0 z-10">
+        <span class="text-primary text-sm font-medium">Admin / Hiring Dashboard</span>
+      </header>
+
+      <!-- CONTENT -->
+      <div class="p-8 space-y-8">
+        <!-- 👉 KEEP ALL TABLES & CARDS EXACTLY AS YOU ALREADY HAVE -->
+      </div>
+
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
 </body>
 </html>

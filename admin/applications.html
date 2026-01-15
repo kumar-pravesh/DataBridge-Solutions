@@ -1,97 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Applications | Admin</title>
+  <title>Applications | DataBridge Admin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#136dec",
+            bgdark: "#101822",
+            muted: "#9da8b9"
+          },
+          fontFamily: {
+            display: ["Inter", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style type="text/tailwindcss">
+    .glass-card {
+      background: rgba(26,31,39,.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,.06);
+    }
+    .sidebar-active {
+      background-color: rgba(19,109,236,.15);
+      border-left: 3px solid #136dec;
+    }
+  </style>
 </head>
 
-<body class="bg-gray-100 min-h-screen flex flex-col">
+<body class="bg-bgdark text-white font-display h-screen overflow-hidden">
 
-  <!-- HEADER -->
-  <header class="bg-white border-b shadow-sm">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="flex items-center gap-3">
-        <div class="text-primary font-extrabold text-xl">DataBridge</div>
-        <span class="text-xs uppercase tracking-widest text-gray-400">Admin</span>
-      </div>
+<!-- AUTH GUARD -->
+<script>
+  if (localStorage.getItem("adminLoggedIn") !== "true") {
+    window.location.href = "admin-login.html";
+  }
+</script>
 
-      <nav class="flex items-center gap-6 text-sm font-medium">
-        <a href="dashboard.html" class="hover:text-primary">Dashboard</a>
-        <a href="jobs.html" class="hover:text-primary">Jobs</a>
-        <a href="applications.html" class="text-primary">Applications</a>
-        <a href="contacts.html" class="hover:text-primary">Contacts</a>
-        <button onclick="adminLogout()" class="ml-4 text-red-600 font-semibold">
-          Logout
-        </button>
+<div class="flex h-full">
+
+  <!-- SIDEBAR -->
+  <aside class="w-72 bg-[#111418] border-r border-white/10 flex flex-col justify-between py-6">
+
+    <div class="space-y-8">
+
+      <!-- LOGO (UNCHANGED) -->
+      <a href="dashboard.html" class="px-6 flex items-center gap-4 group shrink-0">
+        <div class="relative flex items-center justify-center size-11">
+          <svg
+            class="w-full h-full text-primary transition-transform duration-500 group-hover:scale-110"
+            fill="none"
+            viewBox="0 0 44 44"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 10C12 10 22 10 22 22C22 34 12 34 12 34"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="3.5"
+            />
+            <path
+              d="M22 10C22 10 32 10 32 22C32 34 22 34 22 34"
+              stroke="url(#logo-grad)"
+              stroke-linecap="round"
+              stroke-width="3.5"
+              opacity="0.85"
+            />
+            <circle cx="12" cy="10" r="2.5" fill="currentColor" />
+            <circle cx="32" cy="22" r="2.5" fill="url(#logo-grad)" />
+            <circle cx="12" cy="34" r="2.5" fill="currentColor" />
+            <defs>
+              <linearGradient id="logo-grad" x1="22" y1="10" x2="32" y2="34">
+                <stop stop-color="#2E7CFF" />
+                <stop offset="1" stop-color="#00F0FF" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div>
+          <h1 class="text-white text-lg font-bold leading-none">DataBridge</h1>
+          <p class="text-[#9da8b9] text-xs mt-1">Hiring Admin</p>
+        </div>
+      </a>
+
+      <!-- NAV -->
+      <nav class="flex flex-col gap-1">
+        <a href="dashboard.html"
+          class="flex items-center gap-3 px-6 py-3 text-muted hover:bg-[#282f39]">
+          <span class="material-symbols-outlined">dashboard</span>
+          Dashboard
+        </a>
+
+        <a href="jobs.html"
+          class="flex items-center gap-3 px-6 py-3 text-muted hover:bg-[#282f39]">
+          <span class="material-symbols-outlined">work</span>
+          Jobs
+        </a>
+
+        <a href="applications.html"
+          class="flex items-center gap-3 px-6 py-3 text-white sidebar-active">
+          <span class="material-symbols-outlined">group</span>
+          Applications
+        </a>
+
+        <a href="profile.html"
+          class="flex items-center gap-3 px-6 py-3 text-muted hover:bg-[#282f39]">
+          <span class="material-symbols-outlined">person</span>
+          Profile
+        </a>
       </nav>
     </div>
-  </header>
+
+    <!-- LOGOUT -->
+    <button onclick="adminLogout()"
+      class="flex items-center gap-3 px-6 py-3 text-red-400 hover:bg-red-950/20">
+      <span class="material-symbols-outlined">logout</span>
+      Logout
+    </button>
+  </aside>
 
   <!-- MAIN -->
-  <main class="flex-1 max-w-7xl mx-auto px-6 py-10">
+  <main class="flex-1 overflow-y-auto">
 
-    <h1 class="text-2xl font-bold mb-6">Job Applications</h1>
+    <header class="border-b border-white/10 px-8 py-4 sticky top-0 bg-bgdark/80 backdrop-blur">
+      <h1 class="text-lg font-bold">Job Applications</h1>
+    </header>
 
-    <div class="bg-white rounded-xl shadow overflow-x-auto">
-      <table class="min-w-full text-sm">
-        <thead class="bg-gray-50 text-left">
-          <tr>
-            <th class="px-4 py-3 font-semibold">Applicant</th>
-            <th class="px-4 py-3 font-semibold">Email</th>
-            <th class="px-4 py-3 font-semibold">Job</th>
-            <th class="px-4 py-3 font-semibold">Resume</th>
-            <th class="px-4 py-3 font-semibold">Date</th>
-          </tr>
-        </thead>
-
-        <tbody id="applicationsTable"></tbody>
-      </table>
+    <div class="p-8">
+      <div class="glass-card rounded-xl overflow-x-auto">
+        <table class="min-w-full text-sm">
+          <thead class="bg-[#282f39]/60 text-muted">
+            <tr>
+              <th class="px-6 py-4">Applicant</th>
+              <th class="px-6 py-4">Email</th>
+              <th class="px-6 py-4">Job</th>
+              <th class="px-6 py-4">Resume</th>
+              <th class="px-6 py-4">Date</th>
+            </tr>
+          </thead>
+          <tbody id="applicationsTable" class="divide-y divide-white/5"></tbody>
+        </table>
+      </div>
     </div>
-
   </main>
+</div>
 
-  <!-- FOOTER -->
-  <footer class="border-t">
-    <div class="max-w-7xl mx-auto px-6 py-4 text-sm text-gray-500 text-center">
-      © 2026 DataBridge Solutions — Admin Panel
-    </div>
-  </footer>
+<script>
+  function adminLogout() {
+    localStorage.removeItem("adminLoggedIn");
+    localStorage.removeItem("adminUser");
+    window.location.href = "admin-login.html";
+  }
 
-  <!-- SCRIPTS -->
-  <script src="admin.js"></script>
-  <script>
-    const table = document.getElementById("applicationsTable");
-    const applications =
-      JSON.parse(localStorage.getItem("applications")) || [];
+  const table = document.getElementById("applicationsTable");
+  const applications = JSON.parse(localStorage.getItem("applications")) || [];
 
-    if (applications.length === 0) {
-      table.innerHTML = `
-        <tr>
-          <td colspan="5" class="px-4 py-6 text-center text-gray-500">
-            No applications received yet.
-          </td>
+  if (applications.length === 0) {
+    table.innerHTML = `
+      <tr>
+        <td colspan="5" class="px-6 py-8 text-center text-muted">
+          No applications received yet.
+        </td>
+      </tr>
+    `;
+  } else {
+    applications.forEach(app => {
+      table.innerHTML += `
+        <tr class="hover:bg-white/5 transition">
+          <td class="px-6 py-4 font-medium">${app.applicantName}</td>
+          <td class="px-6 py-4">${app.applicantEmail}</td>
+          <td class="px-6 py-4">${app.jobTitle}</td>
+          <td class="px-6 py-4 text-primary">${app.resume || "N/A"}</td>
+          <td class="px-6 py-4 text-muted">${app.appliedAt}</td>
         </tr>
       `;
-    } else {
-      applications.forEach(app => {
-        table.innerHTML += `
-          <tr class="border-t">
-            <td class="px-4 py-3 font-medium">${app.applicantName}</td>
-            <td class="px-4 py-3">${app.applicantEmail}</td>
-            <td class="px-4 py-3">${app.jobTitle}</td>
-            <td class="px-4 py-3 text-blue-600">
-              ${app.resume || "N/A"}
-            </td>
-            <td class="px-4 py-3 text-gray-500">
-              ${app.appliedAt}
-            </td>
-          </tr>
-        `;
-      });
-    }
-  </script>
+    });
+  }
+</script>
 
 </body>
 </html>
