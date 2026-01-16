@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Profile | DataBridge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    rel="stylesheet"
+  />
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#136dec",
+            bgdark: "#101822",
+            muted: "#9da8b9"
+          },
+          fontFamily: {
+            display: ["Inter", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style type="text/tailwindcss">
+    .glass-card {
+      background: rgba(26,31,39,.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,.06);
+    }
+  </style>
+</head>
+
+<body class="bg-bgdark text-white font-display min-h-screen">
+
+<!-- 🔒 AUTH GUARD -->
+<script>
+  if (localStorage.getItem("adminLoggedIn") !== "true") {
+    window.location.href = "admin-login.html";
+  }
+</script>
+
+<main class="max-w-4xl mx-auto px-6 py-10 space-y-10">
+
+  <header>
+    <h1 class="text-2xl font-bold">Admin Profile</h1>
+    <p class="text-muted text-sm mt-1">Manage your account & security</p>
+  </header>
+
+  <!-- ADMIN INFO -->
+  <div class="glass-card rounded-xl p-6 space-y-4">
+    <h2 class="text-lg font-bold">Profile Information</h2>
+
+    <div>
+      <label class="text-sm text-muted">Admin Name</label>
+      <input
+        type="text"
+        value="Admin Alex"
+        class="mt-1 w-full bg-[#282f39] border-none rounded-lg px-4 py-2 text-white"
+      />
+    </div>
+
+    <div>
+      <label class="text-sm text-muted">Email</label>
+      <input
+        type="email"
+        value="admin@databridge.com"
+        class="mt-1 w-full bg-[#282f39] border-none rounded-lg px-4 py-2 text-white"
+      />
+    </div>
+
+    <button class="bg-primary px-4 py-2 rounded-lg font-semibold hover:bg-primary/80">
+      Save Changes
+    </button>
+  </div>
+
+  <!-- CHANGE PASSWORD -->
+  <div class="glass-card rounded-xl p-6 space-y-4">
+    <h2 class="text-lg font-bold">Change Password</h2>
+
+    <input
+      type="password"
+      placeholder="Current Password"
+      class="w-full bg-[#282f39] rounded-lg px-4 py-2 text-white"
+    />
+    <input
+      type="password"
+      placeholder="New Password"
+      class="w-full bg-[#282f39] rounded-lg px-4 py-2 text-white"
+    />
+    <input
+      type="password"
+      placeholder="Confirm New Password"
+      class="w-full bg-[#282f39] rounded-lg px-4 py-2 text-white"
+    />
+
+    <button class="bg-primary px-4 py-2 rounded-lg font-semibold hover:bg-primary/80">
+      Update Password
+    </button>
+  </div>
+
+  <!-- LOGOUT -->
+  <div class="glass-card rounded-xl p-6">
+    <h2 class="text-lg font-bold mb-4">Session</h2>
+    <button
+      onclick="adminLogout()"
+      class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-lg font-semibold"
+    >
+      Logout
+    </button>
+  </div>
+
+</main>
+
+<!-- 🔑 LOGOUT FUNCTION -->
+<script>
+  function adminLogout() {
+    localStorage.removeItem("adminLoggedIn");
+    localStorage.removeItem("adminUser");
+    window.location.href = "admin-login.html";
+  }
+</script>
+
+</body>
+</html>

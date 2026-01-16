@@ -1,194 +1,241 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Manage Jobs | Admin</title>
+  <title>Manage Jobs | DataBridge Admin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#136dec",
+            bgdark: "#101822",
+            muted: "#9da8b9"
+          },
+          fontFamily: {
+            display: ["Inter", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style type="text/tailwindcss">
+    .glass-card {
+      background: rgba(26,31,39,.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,.06);
+    }
+    .sidebar-active {
+      background-color: rgba(19,109,236,.15);
+      border-left: 3px solid #136dec;
+    }
+  </style>
 </head>
 
-<body class="bg-gray-100 min-h-screen flex flex-col">
+<body class="bg-bgdark text-white font-display h-screen overflow-hidden">
 
-  <!-- HEADER -->
-  <header class="bg-white border-b shadow-sm">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="flex items-center gap-3">
-        <div class="text-primary font-extrabold text-xl">DataBridge</div>
-        <span class="text-xs uppercase tracking-widest text-gray-400">Admin</span>
-      </div>
+<script>
+  if (localStorage.getItem("adminLoggedIn") !== "true") {
+    window.location.href = "admin-login.html";
+  }
+</script>
 
-      <nav class="flex items-center gap-6 text-sm font-medium">
-        <a href="dashboard.html" class="hover:text-primary">Dashboard</a>
-        <a href="jobs.html" class="text-primary">Jobs</a>
-        <a href="applications.html" class="hover:text-primary">Applications</a>
-        <a href="contacts.html" class="hover:text-primary">Contacts</a>
-        <button onclick="adminLogout()" class="ml-4 text-red-600 font-semibold">
-          Logout
-        </button>
+<div class="flex h-full">
+
+  <!-- SIDEBAR -->
+  <aside class="w-72 bg-[#111418] border-r border-white/10 flex flex-col justify-between py-6">
+
+    <div class="space-y-8">
+
+      <!-- LOGO (UNCHANGED) -->
+      <a href="dashboard.html" class="px-6 flex items-center gap-4 group shrink-0">
+        <div class="relative flex items-center justify-center size-11">
+          <svg
+            class="w-full h-full text-primary transition-transform duration-500 group-hover:scale-110"
+            fill="none"
+            viewBox="0 0 44 44"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M12 10C12 10 22 10 22 22C22 34 12 34 12 34"
+              stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M22 10C22 10 32 10 32 22C32 34 22 34 22 34"
+              stroke="url(#logo-grad)" stroke-width="3.5" stroke-linecap="round"/>
+            <circle cx="12" cy="10" r="2.5" fill="currentColor"/>
+            <circle cx="12" cy="34" r="2.5" fill="currentColor"/>
+            <circle cx="32" cy="22" r="2.5" fill="url(#logo-grad)"/>
+            <defs>
+              <linearGradient id="logo-grad" x1="22" y1="10" x2="32" y2="34">
+                <stop stop-color="#2E7CFF"/>
+                <stop offset="1" stop-color="#00F0FF"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div>
+          <h1 class="text-white text-lg font-bold leading-none">DataBridge</h1>
+          <p class="text-[#9da8b9] text-xs mt-1">Hiring Admin</p>
+        </div>
+      </a>
+
+      <!-- NAV -->
+      <nav class="flex flex-col gap-1">
+        <a href="dashboard.html"
+          class="flex items-center gap-3 px-6 py-3 text-muted hover:bg-[#282f39]">
+          <span class="material-symbols-outlined">dashboard</span>
+          Dashboard
+        </a>
+
+        <a href="jobs.html"
+          class="flex items-center gap-3 px-6 py-3 text-white sidebar-active">
+          <span class="material-symbols-outlined">work</span>
+          Jobs
+        </a>
+
+        <a href="applications.html"
+          class="flex items-center gap-3 px-6 py-3 text-muted hover:bg-[#282f39]">
+          <span class="material-symbols-outlined">group</span>
+          Applications
+        </a>
+
+        <a href="profile.html"
+          class="flex items-center gap-3 px-6 py-3 text-muted hover:bg-[#282f39]">
+          <span class="material-symbols-outlined">person</span>
+          Profile
+        </a>
       </nav>
     </div>
-  </header>
+
+    <!-- LOGOUT -->
+    <button onclick="adminLogout()"
+      class="flex items-center gap-3 px-6 py-3 text-red-400 hover:bg-red-950/20">
+      <span class="material-symbols-outlined">logout</span>
+      Logout
+    </button>
+  </aside>
 
   <!-- MAIN -->
-  <main class="flex-1 max-w-7xl mx-auto px-6 py-10">
+  <main class="flex-1 overflow-y-auto">
 
-    <h1 class="text-2xl font-bold mb-6">Manage Jobs</h1>
+    <header class="border-b border-white/10 px-8 py-4 sticky top-0 bg-bgdark/80 backdrop-blur">
+      <h1 class="text-lg font-bold">Manage Jobs</h1>
+    </header>
 
-    <!-- ADD / EDIT FORM -->
-   <form
-  id="jobForm"
-  class="bg-white p-6 rounded-xl shadow mb-10
-         grid grid-cols-1 md:grid-cols-2 gap-4"
->
-  <input type="hidden" id="jobId" />
+    <div class="p-8 space-y-10">
 
-  <input id="title" placeholder="Job Title" class="h-11 px-4 border rounded" required />
-  <input id="dept" placeholder="Department" class="h-11 px-4 border rounded" required />
-  <input id="exp" placeholder="Experience (Entry / Experienced)" class="h-11 px-4 border rounded" required />
-  <input id="loc" placeholder="Location" class="h-11 px-4 border rounded" required />
+      <!-- FORM -->
+      <form id="jobForm"
+        class="glass-card rounded-xl p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
 
-  <input
-    id="skills"
-    placeholder="Skills"
-    class="h-11 px-4 border rounded md:col-span-2"
-    required
-  />
+        <input type="hidden" id="jobId" />
 
-  <textarea
-    id="description"
-    placeholder="Job Description"
-    class="p-4 border rounded md:col-span-2"
-    required
-  ></textarea>
+        <input id="title" placeholder="Job Title" class="h-11 bg-[#282f39] rounded-lg px-4" required />
+        <input id="dept" placeholder="Department" class="h-11 bg-[#282f39] rounded-lg px-4" required />
+        <input id="exp" placeholder="Experience" class="h-11 bg-[#282f39] rounded-lg px-4" required />
+        <input id="loc" placeholder="Location" class="h-11 bg-[#282f39] rounded-lg px-4" required />
 
-  <!-- ✅ BUTTON MUST SPAN BOTH COLUMNS -->
-  <div class="md:col-span-2 flex justify-center pt-4">
-    <button
-      type="submit"
-      class="h-12 px-10 min-w-[200px]
-             bg-blue-600 text-white
-             font-bold rounded-lg
-             hover:bg-blue-700 transition"
-    >
-      Save Job
-    </button>
-  </div>
-</form>
+        <input id="skills" placeholder="Skills"
+          class="h-11 bg-[#282f39] rounded-lg px-4 md:col-span-2" required />
 
+        <textarea id="description" placeholder="Job Description"
+          class="bg-[#282f39] rounded-lg px-4 py-3 md:col-span-2"
+          rows="4" required></textarea>
 
-    <!-- JOB LIST -->
-    <div id="jobList" class="space-y-4"></div>
+        <div class="md:col-span-2 flex justify-center pt-4">
+          <button type="submit"
+            class="bg-primary hover:bg-primary/80 px-10 py-3 rounded-lg font-bold">
+            Save Job
+          </button>
+        </div>
+      </form>
 
-  </main>
+      <!-- JOB LIST -->
+      <div id="jobList" class="space-y-4"></div>
 
-  <!-- FOOTER -->
-  <footer class="border-t">
-    <div class="max-w-7xl mx-auto px-6 py-4 text-sm text-gray-500 text-center">
-      © 2026 DataBridge Solutions — Admin Panel
     </div>
-  </footer>
+  </main>
+</div>
 
-  <!-- SCRIPTS -->
-  
-  <script>
-    let jobs = JSON.parse(localStorage.getItem("jobs")) || [];
+<script>
+  function adminLogout() {
+    localStorage.removeItem("adminLoggedIn");
+    localStorage.removeItem("adminUser");
+    window.location.href = "admin-login.html";
+  }
 
-    const jobList = document.getElementById("jobList");
-    const form = document.getElementById("jobForm");
+  let jobs = JSON.parse(localStorage.getItem("jobs")) || [];
+  const jobList = document.getElementById("jobList");
+  const form = document.getElementById("jobForm");
 
-    function renderJobs() {
-      jobList.innerHTML = "";
-
-      if (jobs.length === 0) {
-        jobList.innerHTML = `
-          <div class="text-gray-500 bg-white p-6 rounded-xl shadow">
-            No jobs posted yet.
-          </div>
-        `;
-        return;
-      }
-
-      jobs.forEach(job => {
-        jobList.innerHTML += `
-          <div class="bg-white p-6 rounded-xl shadow flex justify-between items-start">
-            <div>
-              <h3 class="font-bold text-lg">${job.title}</h3>
-              <p class="text-sm text-gray-500">
-                ${job.dept} • ${job.exp} • ${job.loc}
-              </p>
-            </div>
-            <div class="flex gap-4">
-              <button
-                onclick="editJob('${job.id}')"
-                class="text-blue-600 font-semibold"
-              >
-                Edit
-              </button>
-              <button
-                onclick="deleteJob('${job.id}')"
-                class="text-red-600 font-semibold"
-              >
-                Delete
-              </button>
-            </div>
-          </div>
-        `;
-      });
+  function renderJobs() {
+    jobList.innerHTML = "";
+    if (jobs.length === 0) {
+      jobList.innerHTML = `<div class="glass-card p-6 text-muted">No jobs posted yet.</div>`;
+      return;
     }
-
-    form.addEventListener("submit", e => {
-      e.preventDefault();
-
-      const id = document.getElementById("jobId").value || "job_" + Date.now();
-
-      const job = {
-        id,
-        title: title.value,
-        dept: dept.value,
-        exp: exp.value,
-        loc: loc.value,
-        skills: skills.value,
-        description: description.value
-      };
-
-      const index = jobs.findIndex(j => j.id === id);
-
-      if (index >= 0) {
-        jobs[index] = job;
-      } else {
-        jobs.push(job);
-      }
-
-      localStorage.setItem("jobs", JSON.stringify(jobs));
-      form.reset();
-      document.getElementById("jobId").value = "";
-      renderJobs();
+    jobs.forEach(job => {
+      jobList.innerHTML += `
+        <div class="glass-card p-6 flex justify-between">
+          <div>
+            <h3 class="font-bold">${job.title}</h3>
+            <p class="text-sm text-muted">${job.dept} • ${job.exp} • ${job.loc}</p>
+          </div>
+          <div class="flex gap-4">
+            <button onclick="editJob('${job.id}')" class="text-primary">Edit</button>
+            <button onclick="deleteJob('${job.id}')" class="text-red-400">Delete</button>
+          </div>
+        </div>`;
     });
+  }
 
-    function editJob(id) {
-      const job = jobs.find(j => j.id === id);
-      if (!job) return;
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    const id = jobId.value || "job_" + Date.now();
+    const job = {
+      id,
+      title: title.value,
+      dept: dept.value,
+      exp: exp.value,
+      loc: loc.value,
+      skills: skills.value,
+      description: description.value
+    };
+    const i = jobs.findIndex(j => j.id === id);
+    i >= 0 ? jobs[i] = job : jobs.push(job);
+    localStorage.setItem("jobs", JSON.stringify(jobs));
+    form.reset(); jobId.value = ""; renderJobs();
+  });
 
-      jobId.value = job.id;
-      title.value = job.title;
-      dept.value = job.dept;
-      exp.value = job.exp;
-      loc.value = job.loc;
-      skills.value = job.skills;
-      description.value = job.description;
+  function editJob(id) {
+    const j = jobs.find(x => x.id === id);
+    if (!j) return;
+    jobId.value = j.id;
+    title.value = j.title;
+    dept.value = j.dept;
+    exp.value = j.exp;
+    loc.value = j.loc;
+    skills.value = j.skills;
+    description.value = j.description;
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
 
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-
-    function deleteJob(id) {
-      if (!confirm("Delete this job?")) return;
-      jobs = jobs.filter(j => j.id !== id);
-      localStorage.setItem("jobs", JSON.stringify(jobs));
-      renderJobs();
-    }
-
+  function deleteJob(id) {
+    if (!confirm("Delete this job?")) return;
+    jobs = jobs.filter(j => j.id !== id);
+    localStorage.setItem("jobs", JSON.stringify(jobs));
     renderJobs();
-  </script>
+  }
+
+  renderJobs();
+</script>
 
 </body>
 </html>
